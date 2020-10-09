@@ -1,0 +1,2 @@
+# NicePlaces
+Nice Places

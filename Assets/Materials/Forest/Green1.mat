@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Green1
+  m_Shader: {fileID: 4800000, guid: 660994955172d644c979be122b660d68, type: 3}
+  m_ShaderKeywords: _RADIALNORMALIZED_ON _WIPENORMALIZE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Flip: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Height: 10
+    - _Metallic: 0
+    - _Mode: 0
+    - _Normalize: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _RadialAngleArc: 0
+    - _RadialAngleStart: 0
+    - _RadialAngleStop: 0
+    - _RadialEnabled: 1
+    - _RadialMinimum: 0
+    - _RadialNormalized: 0
+    - _RadialSineOffset: 0
+    - _RadialSinePeriod: 0
+    - _RadialSineScale: 0
+    - _RadialSineThreshold: 0
+    - _RingEnabled: 1
+    - _RingNormalized: 1
+    - _RingSineOffset: 0.00019999947
+    - _RingSinePeriod: 10
+    - _RingSineScale: 1.01
+    - _RingSineThreshold: 0
+    - _RingX: 4.5
+    - _RingY: -3.44
+    - _RowHeight: 10
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _StripeHeight: 1
+    - _StripeSineEnabled: 1
+    - _StripeSineOffset: 767.0002
+    - _StripeSinePeriod: -0.02
+    - _StripeSineScale: 0.59
+    - _StripeSineThreshold: 0.8
+    - _StripeSineTwiddle: 3
+    - _UVSec: 0
+    - _WipeEnabled: 0
+    - _WipeNormalize: 1
+    - _WipeSlope: 1
+    - _WipeX: 0.52
+    - _WipeYOffset: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0.65553576, g: 0.7259973, b: 0.9339623, a: 1}
+    - _Color1: {r: 0.04801533, g: 0.7830189, b: 0.2958618, a: 1}
+    - _Color2: {r: 0.48273405, g: 0.9056604, b: 0.5093053, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
+    - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
+    - _RingScale: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

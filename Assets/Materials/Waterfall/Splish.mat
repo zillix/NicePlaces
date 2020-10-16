@@ -82,7 +82,7 @@ Material:
     - _RadialSineThreshold: 0
     - _RingEnabled: 1
     - _RingNormalized: 1
-    - _RingSineOffset: -4.013985
+    - _RingSineOffset: -4.031381
     - _RingSinePeriod: 17.87
     - _RingSineScale: 1
     - _RingSineThreshold: 0

@@ -67,13 +67,13 @@ Material:
     - _Height: 10
     - _Metallic: 0
     - _Mode: 0
-    - _Normalize: 0
+    - _Normalize: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RadialAngleArc: 0
     - _RadialAngleStart: 0
     - _RadialAngleStop: 0
-    - _RadialEnabled: 1
+    - _RadialEnabled: 0
     - _RadialMinimum: 0
     - _RadialNormalized: 1
     - _RadialSineOffset: -6.372167
@@ -82,41 +82,41 @@ Material:
     - _RadialSineThreshold: 0
     - _RingEnabled: 1
     - _RingNormalized: 1
-    - _RingSineOffset: -1.6815245
-    - _RingSinePeriod: 15.65
-    - _RingSineScale: 5.3
+    - _RingSineOffset: -18.763063
+    - _RingSinePeriod: 9.42
+    - _RingSineScale: 1
     - _RingSineThreshold: 0
-    - _RingX: 0.49
-    - _RingY: 0.29
+    - _RingX: 0.54
+    - _RingY: 1.09
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StripeHeight: 1
+    - _StripeHeight: 6.41
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: -481.22015
-    - _StripeSinePeriod: 0.02
+    - _StripeSineOffset: 0.022199998
+    - _StripeSinePeriod: 0
     - _StripeSineScale: 0
     - _StripeSineThreshold: 0
     - _StripeSineTwiddle: 0
     - _UVSec: 0
     - _WipeEnabled: 1
     - _WipeNormalize: 0
-    - _WipeNormalized: 0
+    - _WipeNormalized: 1
     - _WipeSineInvertAxes: 0
     - _WipeSineOffset: 567.4
-    - _WipeSinePeriod: 0.006
-    - _WipeSineScale: 11.4
-    - _WipeSineShapeOffset: 383.41965
-    - _WipeSineShapePeriod: 0.07
-    - _WipeSineShapeScale: 76.92671
+    - _WipeSinePeriod: 4.26
+    - _WipeSineScale: 1
+    - _WipeSineShapeOffset: 421.0655
+    - _WipeSineShapePeriod: -3.72
+    - _WipeSineShapeScale: 53.77
     - _WipeSineShapeTwaddle: 0
     - _WipeSineShapeTwiddle: 0
-    - _WipeSineThreshold: 0
-    - _WipeSineTwaddle: 0
-    - _WipeSineTwiddle: 0
-    - _WipeSlope: 1.3
+    - _WipeSineThreshold: -0.738
+    - _WipeSineTwaddle: -0.81
+    - _WipeSineTwiddle: 1.4
+    - _WipeSlope: 29.1
     - _WipeX: 0
-    - _WipeYOffset: 0.003
+    - _WipeYOffset: 0.3
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.94422317, g: 1, b: 0, a: 1}
@@ -125,5 +125,5 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
     - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
-    - _RingScale: {r: 1, g: 0.2, b: 0, a: 0}
+    - _RingScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

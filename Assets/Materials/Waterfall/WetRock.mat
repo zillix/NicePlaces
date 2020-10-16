@@ -82,7 +82,7 @@ Material:
     - _RadialSineThreshold: 0
     - _RingEnabled: 1
     - _RingNormalized: 1
-    - _RingSineOffset: -6.170884
+    - _RingSineOffset: -6.182886
     - _RingSinePeriod: 7.16
     - _RingSineScale: 1
     - _RingSineThreshold: 0
@@ -93,7 +93,7 @@ Material:
     - _SrcBlend: 1
     - _StripeHeight: 1
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: 0.00816
+    - _StripeSineOffset: 0.008
     - _StripeSinePeriod: 16.35
     - _StripeSineScale: 0
     - _StripeSineThreshold: 0
@@ -106,7 +106,7 @@ Material:
     - _WipeSineOffset: 0.82
     - _WipeSinePeriod: 0.006
     - _WipeSineScale: 11.4
-    - _WipeSineShapeOffset: 1136.1232
+    - _WipeSineShapeOffset: 1137.8849
     - _WipeSineShapePeriod: 0.02
     - _WipeSineShapeScale: 279.55
     - _WipeSineShapeTwaddle: 0
@@ -116,7 +116,7 @@ Material:
     - _WipeSineTwiddle: 0
     - _WipeSlope: 1.3
     - _WipeX: 0
-    - _WipeYOffset: -17.17
+    - _WipeYOffset: -17.24
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.94422317, g: 1, b: 0, a: 1}

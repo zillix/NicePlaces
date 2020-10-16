@@ -76,13 +76,13 @@ Material:
     - _RadialEnabled: 1
     - _RadialMinimum: 0
     - _RadialNormalized: 1
-    - _RadialSineOffset: 0.006399999
+    - _RadialSineOffset: 0.006
     - _RadialSinePeriod: 23.94
     - _RadialSineScale: 1
     - _RadialSineThreshold: 0
     - _RingEnabled: 1
     - _RingNormalized: 1
-    - _RingSineOffset: 0.13231999
+    - _RingSineOffset: 0.13211998
     - _RingSinePeriod: 11.11
     - _RingSineScale: 0.06
     - _RingSineThreshold: 0
@@ -107,7 +107,7 @@ Material:
     - _WipeSineOffset: 0
     - _WipeSinePeriod: 2.1
     - _WipeSineScale: 0.48
-    - _WipeSineShapeOffset: -11.841345
+    - _WipeSineShapeOffset: -11.855524
     - _WipeSineShapePeriod: 17.23
     - _WipeSineShapeScale: 3.32
     - _WipeSineShapeTwaddle: 0
@@ -117,7 +117,7 @@ Material:
     - _WipeSineTwiddle: 0
     - _WipeSlope: -14.04
     - _WipeX: 0.52
-    - _WipeYOffset: -31.025515
+    - _WipeYOffset: -31.060963
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.65553576, g: 0.7259973, b: 0.9339623, a: 1}

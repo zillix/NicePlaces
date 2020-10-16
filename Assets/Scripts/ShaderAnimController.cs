@@ -15,6 +15,8 @@ public class ShaderAnimController : MonoBehaviour
 
 	private float time;
 
+	private Dictionary<ControlVal, float> baseCache = new Dictionary<ControlVal, float>();
+
 	public void Update()
 	{
 		if (grabChildren)
@@ -52,8 +54,21 @@ public class ShaderAnimController : MonoBehaviour
 				if (config.updateWipe)
 				{
 					renderer.sharedMaterial.SetFloat("_WipeEnabled", state.wipeEnabled ? 1 : 0);
+					renderer.sharedMaterial.SetFloat("_WipeNormalized", state.wipeNormalized ? 1 : 0);
 					renderer.sharedMaterial.SetFloat("_WipeSlope", state.wipeSlope);
 					applyControlVal(renderer, "_WipeYOffset", ref state.wipeYOffset, config.wipeYOffsetControl);
+					renderer.sharedMaterial.SetFloat("_WipeSinePeriod", state.wipeSinePeriod);
+					renderer.sharedMaterial.SetFloat("_WipeSineScale", state.wipeSineScale);
+					renderer.sharedMaterial.SetFloat("_WipeSineInvertAxes", state.wipeSineInvertAxes ? 1 : 0);
+					applyControlVal(renderer, "_WipeSineOffset", ref state.wipeSineOffset, config.wipeSineOffset);
+					applyControlVal(renderer, "_WipeSineThreshold", ref state.wipeSineThreshold, config.wipeSineThreshold);
+					renderer.sharedMaterial.SetFloat("_WipeSineTwiddle", state.wipeSineTwiddle);
+					renderer.sharedMaterial.SetFloat("_WipeSineTwaddle", state.wipeSineTwaddle);
+					renderer.sharedMaterial.SetFloat("_WipeSineShapePeriod", state.wipeSineShapePeriod);
+					applyControlVal(renderer, "_WipeSineShapeOffset", ref state.wipeSineShapeOffset, config.wipeSineShapeOffset);
+					applyControlVal(renderer, "_WipeSineShapeScale", ref state.wipeSineShapeScale, config.wipeSineShapeScale);
+					renderer.sharedMaterial.SetFloat("_WipeSineShapeTwiddle", state.wipeSineShapeTwiddle);
+					renderer.sharedMaterial.SetFloat("_WipeSineShapeTwaddle", state.wipeSineShapeTwaddle);
 				}
 
 				if (config.updateRadial)
@@ -93,12 +108,24 @@ public class ShaderAnimController : MonoBehaviour
 
 	private void applyControlVal(MeshRenderer renderer, string name, ref float state, ControlVal control)
 	{
+		if (!GameManager.Started)
+		{
+			return;
+		}
+
+		if (!baseCache.ContainsKey(control))
+		{
+			baseCache.Add(control, state);
+		}
+		float baseVal = baseCache[control];
+
+
 		float assign = state;
 		if (control.speed != 0)
 		{
-			if (control.radMagnitude > 0)
+			if (control.radMagnitude != 0)
 			{
-				assign = Mathf.Sin(time * control.speed) * control.radMagnitude;
+				assign = baseVal + Mathf.Sin(time * control.speed) * control.radMagnitude;
 			}
 			else
 			{

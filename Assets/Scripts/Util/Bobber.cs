@@ -10,6 +10,7 @@ public class Bobber : MonoBehaviour
 	public float BobAngleSpeed = 90;
 	public float BobMagnitudeX = 0f;
 
+	public float BobStartAngle = 0f;
 	private float angle;
 	private Vector3 startPosition;
 
@@ -17,6 +18,7 @@ public class Bobber : MonoBehaviour
     void Start()
     {
 		startPosition = transform.position;
+		angle = BobStartAngle;
     }
 
     // Update is called once per frame

@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lantern
+  m_Name: Practice
   m_Shader: {fileID: 4800000, guid: 660994955172d644c979be122b660d68, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _STRIPESINEENABLED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -70,61 +70,61 @@ Material:
     - _Normalize: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RadialAngleArc: 1
-    - _RadialAngleStart: -0.86
+    - _RadialAngleArc: 0
+    - _RadialAngleStart: 0
     - _RadialAngleStop: 0
-    - _RadialEnabled: 1
-    - _RadialMinimum: -0.07
-    - _RadialNormalized: 1
-    - _RadialSineOffset: 0.06
-    - _RadialSinePeriod: 20.83
-    - _RadialSineScale: 1
-    - _RadialSineThreshold: -0.75
+    - _RadialEnabled: 0
+    - _RadialMinimum: 0
+    - _RadialNormalized: 0
+    - _RadialSineOffset: 0
+    - _RadialSinePeriod: 0
+    - _RadialSineScale: 0
+    - _RadialSineThreshold: 0
     - _RingEnabled: 0
-    - _RingNormalized: 0
-    - _RingSineOffset: 0.009299992
-    - _RingSinePeriod: 0
-    - _RingSineScale: 0
+    - _RingNormalized: 1
+    - _RingSineOffset: -0.87597007
+    - _RingSinePeriod: 89.53
+    - _RingSineScale: 1
     - _RingSineThreshold: 0
-    - _RingX: 0
-    - _RingY: 0
+    - _RingX: 0.08
+    - _RingY: 0.7
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StripeHeight: 217.4
+    - _StripeHeight: 1.69
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: 0
-    - _StripeSinePeriod: 0
+    - _StripeSineOffset: 1039
+    - _StripeSinePeriod: 0.01
     - _StripeSineScale: 0
     - _StripeSineThreshold: 0
     - _StripeSineTwiddle: 0
     - _UVSec: 0
     - _WineSineShapeTwaddle: 0
-    - _WipeEnabled: 0
+    - _WipeEnabled: 1
     - _WipeNormalize: 0
     - _WipeNormalized: 0
     - _WipeSineInvertAxes: 0
-    - _WipeSineOffset: 1
-    - _WipeSinePeriod: 0
-    - _WipeSineScale: 1
-    - _WipeSineShapeOffset: 0
-    - _WipeSineShapePeriod: 0
-    - _WipeSineShapeScale: 1
+    - _WipeSineOffset: 48.47
+    - _WipeSinePeriod: 0.003
+    - _WipeSineScale: 11.4
+    - _WipeSineShapeOffset: 201.45
+    - _WipeSineShapePeriod: 0.02
+    - _WipeSineShapeScale: 115.19
     - _WipeSineShapeTwaddle: 0
     - _WipeSineShapeTwiddle: 0
-    - _WipeSineThreshold: 0
+    - _WipeSineThreshold: 7.01
     - _WipeSineTwaddle: 0
     - _WipeSineTwiddle: 0
-    - _WipeSlope: 1
+    - _WipeSlope: -0.5
     - _WipeX: 0
-    - _WipeYOffset: 0
+    - _WipeYOffset: 0.003
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.94422317, g: 1, b: 0, a: 1}
-    - _Color1: {r: 0.94509804, g: 0.6356685, b: 0.21568626, a: 1}
-    - _Color2: {r: 0.98039216, g: 0.56501913, b: 0.24313723, a: 1}
+    - _Color1: {r: 0.8018868, g: 0.502951, b: 0.010590916, a: 1}
+    - _Color2: {r: 0.98039216, g: 0.65678364, b: 0.24313723, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RadialArcStart: {r: 1.35, g: -0.5, b: 0, a: 0}
-    - _RadialArcStop: {r: 0.73, g: 0.5, b: 0, a: 0}
-    - _RingScale: {r: 0, g: 0, b: 0, a: 0}
+    - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
+    - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
+    - _RingScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

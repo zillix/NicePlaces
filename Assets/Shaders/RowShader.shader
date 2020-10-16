@@ -17,8 +17,21 @@ Shader "Zillix/RowShader"
 		_StripeSineThreshold("Stripe Sine Threshold", Float) = 0
 
 		[Toggle] _WipeEnabled("Wipe Enabled", Float) = 0
+		[Toggle] _WipeNormalized("Wipe Normalized", Float) = 0
 		_WipeSlope("Wipe Slope", Float) = 0
 		_WipeYOffset("Wipe Y Offset", Float) = 0
+		_WipeSinePeriod("Wipe Sine Period", Float) = 0
+		_WipeSineScale("Wipe Sine Scale", Float) = 1
+		_WipeSineOffset("Wipe Sine Offset", Float) = 1
+		_WipeSineThreshold("Wipe Sine Threshold", Float) = 0
+		_WipeSineTwiddle("Wipe Sine Twiddle", Float) = 0
+		_WipeSineTwaddle("Wipe Sine Twaddle", Float) = 0
+		[Toggle]_WipeSineInvertAxes("Wipe Sine Invert Axes", Float) = 0
+		_WipeSineShapePeriod("Wipe Sine Shape Period", Float) = 0
+		_WipeSineShapeOffset("Wipe Sine Shape Offset", Float) = 0
+		_WipeSineShapeScale("Wipe Sine Shape Scale", Float) = 1
+		_WipeSineShapeTwiddle("Wipe Sine Shape Twiddle", Float) = 0
+		_WipeSineShapeTwaddle("Wipe Sine Shape Twaddle", Float) = 0
 
 		[Toggle] _RadialEnabled("Radial Enabled", Float) = 0
 		[Toggle] _RadialNormalized("Radial Normalized", Float) = 0
@@ -58,8 +71,21 @@ Shader "Zillix/RowShader"
 	float _StripeSineThreshold;
 
 	float _WipeEnabled;
+	float _WipeNormalized;
 	float _WipeSlope;
 	float _WipeYOffset;
+	float _WipeSinePeriod;
+	float _WipeSineScale;
+	float _WipeSineThreshold;
+	float _WipeSineInvertAxes;
+	float _WipeSineOffset;
+	float _WipeSineTwiddle;
+	float _WipeSineTwaddle;
+	float _WipeSineShapePeriod;
+	float _WipeSineShapeOffset;
+	float _WipeSineShapeScale;
+	float _WipeSineShapeTwiddle;
+	float _WipeSineShapeTwaddle;
 
 	float _RadialEnabled;
 	float _RadialNormalized;
@@ -133,13 +159,43 @@ Shader "Zillix/RowShader"
 
 		// Wipe
 		if (_WipeEnabled) {
-			float lineY = x * _WipeSlope + _WipeYOffset;
-			if (lineY > y)
-			{
-				flip = !flip;
-				//c1.r = lineY;
-				//c2.r = lineY;
+
+			float wipeX = _WipeNormalized ? (i.pos.x / _ScreenParams.x) : i.pos.x;
+			float wipeY = _WipeNormalized ? (i.pos.y / _ScreenParams.y) : i.pos.y;
+			float baseX = wipeX;
+			float baseY = wipeY;
+			if (_WipeSineInvertAxes != 0) {
+				float temp = baseX;
+				baseX = baseY;// 1 / (_WipeSlope == 0 ? .0001 : _WipeSlope);
+				baseY = temp;
 			}
+
+
+			float inputX = baseX;
+			float inputY = baseY + baseX * _WipeSlope + _WipeYOffset;
+
+			if (_WipeSineShapePeriod != 0) {
+				float shapeSinAngle = (baseY + _WipeSineShapeOffset) * _WipeSineShapePeriod;
+				float shapeSinInput = shapeSinAngle;
+				if (_WipeSineShapeTwiddle != 0 || _WipeSineShapeTwaddle != 0) {
+					shapeSinInput = -_WipeSineShapeTwiddle * cos(shapeSinAngle) + shapeSinAngle * (_WipeSineShapeTwiddle + _WipeSineShapeTwaddle);
+				}
+				float calculatedSin = sin(shapeSinInput);
+
+				float2 slopeNormVec = _WipeSineShapeScale * normalize(float2(-_WipeSlope, baseX));
+				slopeNormVec *= calculatedSin;
+				inputX += slopeNormVec.x;
+				inputY += slopeNormVec.y;
+			}
+			float sinAngle = (inputY + _WipeSineOffset) * _WipeSinePeriod;
+			
+			float sinInput = sinAngle;
+			if (_WipeSineTwiddle != 0 || _WipeSineTwaddle != 0) {
+				sinInput = -_WipeSineTwiddle * cos(sinAngle) + sinAngle * (_WipeSineTwiddle + _WipeSineTwaddle);
+			}
+			float stripeSine = _WipeSineScale * sin(sinInput);
+			if (stripeSine > _WipeSineThreshold)
+				flip = !flip;
 		}
 
 		// Radial

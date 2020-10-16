@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lantern
+  m_Name: Froth
   m_Shader: {fileID: 4800000, guid: 660994955172d644c979be122b660d68, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -70,31 +70,31 @@ Material:
     - _Normalize: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RadialAngleArc: 1
-    - _RadialAngleStart: -0.86
+    - _RadialAngleArc: 0
+    - _RadialAngleStart: 0
     - _RadialAngleStop: 0
     - _RadialEnabled: 1
-    - _RadialMinimum: -0.07
+    - _RadialMinimum: 0.06
     - _RadialNormalized: 1
-    - _RadialSineOffset: 0.06
-    - _RadialSinePeriod: 20.83
-    - _RadialSineScale: 1
-    - _RadialSineThreshold: -0.75
-    - _RingEnabled: 0
-    - _RingNormalized: 0
-    - _RingSineOffset: 0.009299992
-    - _RingSinePeriod: 0
-    - _RingSineScale: 0
-    - _RingSineThreshold: 0
-    - _RingX: 0
-    - _RingY: 0
+    - _RadialSineOffset: 0.047799744
+    - _RadialSinePeriod: 10.6
+    - _RadialSineScale: 0.21
+    - _RadialSineThreshold: 0.00019999988
+    - _RingEnabled: 1
+    - _RingNormalized: 1
+    - _RingSineOffset: 0.025019987
+    - _RingSinePeriod: 57.9
+    - _RingSineScale: 19.7
+    - _RingSineThreshold: 1.241
+    - _RingX: 198.2
+    - _RingY: 918.3
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StripeHeight: 217.4
+    - _StripeHeight: 5.69
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: 0
-    - _StripeSinePeriod: 0
+    - _StripeSineOffset: 460.21228
+    - _StripeSinePeriod: 0.04
     - _StripeSineScale: 0
     - _StripeSineThreshold: 0
     - _StripeSineTwiddle: 0
@@ -121,10 +121,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.94422317, g: 1, b: 0, a: 1}
-    - _Color1: {r: 0.94509804, g: 0.6356685, b: 0.21568626, a: 1}
-    - _Color2: {r: 0.98039216, g: 0.56501913, b: 0.24313723, a: 1}
+    - _Color1: {r: 0.24313727, g: 0.34901962, b: 0.9803922, a: 1}
+    - _Color2: {r: 0.63999647, g: 0.68296564, b: 0.9622642, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RadialArcStart: {r: 1.35, g: -0.5, b: 0, a: 0}
-    - _RadialArcStop: {r: 0.73, g: 0.5, b: 0, a: 0}
-    - _RingScale: {r: 0, g: 0, b: 0, a: 0}
+    - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
+    - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
+    - _RingScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

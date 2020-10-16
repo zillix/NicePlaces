@@ -93,14 +93,28 @@ Material:
     - _SrcBlend: 1
     - _StripeHeight: 5.69
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: 460.963
+    - _StripeSineOffset: 460.25232
     - _StripeSinePeriod: 0.04
     - _StripeSineScale: 0
-    - _StripeSineThreshold: 0.19
+    - _StripeSineThreshold: 0
     - _StripeSineTwiddle: 0
     - _UVSec: 0
+    - _WineSineShapeTwaddle: 0
     - _WipeEnabled: 0
     - _WipeNormalize: 0
+    - _WipeNormalized: 0
+    - _WipeSineInvertAxes: 0
+    - _WipeSineOffset: 1
+    - _WipeSinePeriod: 0
+    - _WipeSineScale: 1
+    - _WipeSineShapeOffset: 0
+    - _WipeSineShapePeriod: 0
+    - _WipeSineShapeScale: 1
+    - _WipeSineShapeTwaddle: 0
+    - _WipeSineShapeTwiddle: 0
+    - _WipeSineThreshold: 0
+    - _WipeSineTwaddle: 0
+    - _WipeSineTwiddle: 0
     - _WipeSlope: 1
     - _WipeX: 0
     - _WipeYOffset: 0

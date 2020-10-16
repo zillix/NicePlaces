@@ -1,5 +1,155 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &456070283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 456070289}
+  - component: {fileID: 456070288}
+  - component: {fileID: 456070284}
+  - component: {fileID: 456070287}
+  - component: {fileID: 456070286}
+  - component: {fileID: 456070285}
+  m_Layer: 0
+  m_Name: Froth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &456070289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456070283}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.97, y: -2.08, z: -3.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3601509955265425795}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!60 &456070288
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456070283}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 5.0839405, y: -1.2800465}
+      - {x: 4.5828233, y: -1.5032005}
+      - {x: 3.7144027, y: -1.4236872}
+      - {x: 2.8755782, y: -1.5973439}
+      - {x: 2.0534735, y: -1.7576327}
+      - {x: 1.140378, y: -2.055805}
+      - {x: -1.4664522, y: -1.8320324}
+      - {x: -3.4809637, y: -2.3218265}
+      - {x: 0.42864895, y: -3.3236852}
+      - {x: 4.569571, y: -3.9756258}
+      - {x: 6.8590207, y: -1.4944685}
+      - {x: 5.243501, y: -1.5274012}
+--- !u!23 &456070284
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456070283}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 16bf60ec57962b24f8b2401223714637, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &456070287
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456070283}
+  m_Mesh: {fileID: 0}
+--- !u!114 &456070286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456070283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f154cf906461f874f85c842dae899523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zPosition: 0
+--- !u!114 &456070285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456070283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcaae3fbf29b544ba2ac821a94e86f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wobbleScale: 2
+  wobbleSpeedScale: 1
+  Glitching: 0
+  Wobbling: 1
 --- !u!1 &3601509955265425792
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +161,7 @@ GameObject:
   - component: {fileID: 3601509955265425795}
   - component: {fileID: 3601509955265425797}
   m_Layer: 0
-  m_Name: World
+  m_Name: Beach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,6 +185,7 @@ Transform:
   - {fileID: 3601509956667559637}
   - {fileID: 3601509956191790093}
   - {fileID: 3601509955781042795}
+  - {fileID: 456070289}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,10 +203,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state:
     normalize: 0
+    flip: 0
     stripeHeight: 5.69
     stripeSineEnabled: 1
     stripeSinePeriod: 0.04
-    stripeSineOffset: 461.0431
+    stripeSineTwiddle: 0
+    stripeSineTwaddle: 0
+    stripeSineOffset: 460.41248
     stripeSineThreshold: 0.19
     wipeEnabled: 0
     wipeSlope: 0
@@ -67,6 +221,8 @@ MonoBehaviour:
     radialSineOffset: 0
     radialSineThreshold: 0
     radialMinimum: 0
+    radialArcStart: {x: 0, y: 0}
+    radialArcStop: {x: 0, y: 0}
     radialPos: {x: 0, y: 0}
     ringEnabled: 0
     ringNormalized: 0
@@ -74,9 +230,11 @@ MonoBehaviour:
     ringSineScale: 0
     ringSineOffset: 0.009599991
     ringSineThreshold: 0
+    ringScale: {x: 1, y: 1}
     ringPos: {x: 0, y: 0}
     animator: {fileID: 0}
   config:
+    updateFlip: 0
     updateNormalize: 1
     updateStripeHeight: 1
     updateStripeSine: 1
@@ -112,6 +270,7 @@ MonoBehaviour:
   - {fileID: 3601509956863049411}
   - {fileID: 3601509956667559657}
   - {fileID: 3601509956191790081}
+  - {fileID: 456070284}
   grabChildren: 1
 --- !u!1 &3601509955781042792
 GameObject:
@@ -577,9 +736,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state:
     normalize: 0
+    flip: 0
     stripeHeight: 0
     stripeSineEnabled: 0
     stripeSinePeriod: 0
+    stripeSineTwiddle: 0
+    stripeSineTwaddle: 0
     stripeSineOffset: 0
     stripeSineThreshold: 0
     wipeEnabled: 0
@@ -592,16 +754,20 @@ MonoBehaviour:
     radialSineOffset: 0.0012999998
     radialSineThreshold: 0
     radialMinimum: 0
+    radialArcStart: {x: 0, y: 0}
+    radialArcStop: {x: 0, y: 0}
     radialPos: {x: 0, y: 0}
     ringEnabled: 1
     ringNormalized: 1
     ringSinePeriod: 57.9
     ringSineScale: 19.7
-    ringSineOffset: 0.019719996
+    ringSineOffset: 0.020619994
     ringSineThreshold: 1.241
+    ringScale: {x: 1, y: 1}
     ringPos: {x: 198.2, y: 918.3}
     animator: {fileID: 0}
   config:
+    updateFlip: 0
     updateNormalize: 0
     updateStripeHeight: 0
     updateStripeSine: 0
@@ -678,9 +844,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state:
     normalize: 0
+    flip: 0
     stripeHeight: 0
     stripeSineEnabled: 0
     stripeSinePeriod: 0
+    stripeSineTwiddle: 0
+    stripeSineTwaddle: 0
     stripeSineOffset: 0
     stripeSineThreshold: 0
     wipeEnabled: 0
@@ -693,6 +862,8 @@ MonoBehaviour:
     radialSineOffset: 0
     radialSineThreshold: 0
     radialMinimum: 0
+    radialArcStart: {x: 0, y: 0}
+    radialArcStop: {x: 0, y: 0}
     radialPos: {x: 0, y: 0}
     ringEnabled: 0
     ringNormalized: 1
@@ -700,9 +871,11 @@ MonoBehaviour:
     ringSineScale: 0
     ringSineOffset: 0
     ringSineThreshold: 0
+    ringScale: {x: 1, y: 1}
     ringPos: {x: 198.2, y: 918.3}
     animator: {fileID: 0}
   config:
+    updateFlip: 0
     updateNormalize: 0
     updateStripeHeight: 0
     updateStripeSine: 0
@@ -780,9 +953,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state:
     normalize: 0
+    flip: 0
     stripeHeight: 0
     stripeSineEnabled: 0
     stripeSinePeriod: 0
+    stripeSineTwiddle: 0
+    stripeSineTwaddle: 0
     stripeSineOffset: 0
     stripeSineThreshold: 0
     wipeEnabled: 0
@@ -792,19 +968,23 @@ MonoBehaviour:
     radialNormalized: 1
     radialSinePeriod: 10.6
     radialSineScale: 0.21
-    radialSineOffset: 0.06319973
+    radialSineOffset: 0.051599737
     radialSineThreshold: 0.10199999
     radialMinimum: 0.06
-    radialPos: {x: 0.21, y: 0.96}
+    radialArcStart: {x: 0, y: 0}
+    radialArcStop: {x: 0, y: 0}
+    radialPos: {x: 0.22, y: 0.9}
     ringEnabled: 0
     ringNormalized: 0
     ringSinePeriod: 0
     ringSineScale: 0
     ringSineOffset: 0
     ringSineThreshold: 0
+    ringScale: {x: 1, y: 1}
     ringPos: {x: 198.2, y: 918.3}
     animator: {fileID: 0}
   config:
+    updateFlip: 0
     updateNormalize: 0
     updateStripeHeight: 0
     updateStripeSine: 0

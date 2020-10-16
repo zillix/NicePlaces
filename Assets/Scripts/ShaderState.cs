@@ -19,8 +19,21 @@ public class ShaderState
 	public float stripeSineThreshold;
 
 	public bool wipeEnabled;
+	public bool wipeNormalized;
 	public float wipeSlope;
 	public float wipeYOffset;
+	public float wipeSinePeriod;
+	public float wipeSineScale;
+	public float wipeSineOffset;
+	public float wipeSineThreshold;
+	public float wipeSineTwiddle;
+	public float wipeSineTwaddle;
+	public bool wipeSineInvertAxes;
+	public float wipeSineShapePeriod;
+	public float wipeSineShapeOffset;
+	public float wipeSineShapeScale;
+	public float wipeSineShapeTwiddle;
+	public float wipeSineShapeTwaddle;
 
 	public bool radialEnabled;
 	public bool radialNormalized;

@@ -17,6 +17,10 @@ public class ShaderAnimControlConfig
 	public ControlVal stripeSineOffsetControl;
 	public ControlVal stripeSineThresholdControl;
 	public ControlVal wipeYOffsetControl;
+	public ControlVal wipeSineOffset;
+	public ControlVal wipeSineShapeScale;
+	public ControlVal wipeSineShapeOffset;
+	public ControlVal wipeSineThreshold;
 	public ControlVal radialSineOffsetControl;
 	public ControlVal radialSineThresholdControl;
 	public ControlVal ringSineOffsetControl;

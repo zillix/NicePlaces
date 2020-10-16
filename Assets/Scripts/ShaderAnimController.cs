@@ -33,72 +33,72 @@ public class ShaderAnimController : MonoBehaviour
 				if (!renderer) continue;
 
 				if (config.updateFlip)
-					renderer.sharedMaterial.SetFloat("_Flip", state.flip ? 1 : 0);
+					updateFloat(renderer, "_Flip", state.flip ? 1 : 0);
 
 
 				if (config.updateNormalize)
-					renderer.sharedMaterial.SetFloat("_Normalize", state.normalize ? 1 : 0);
+					updateFloat(renderer, "_Normalize", state.normalize ? 1 : 0);
 
 				if (config.updateStripeHeight)
-					renderer.sharedMaterial.SetFloat("_StripeHeight", state.stripeHeight);
+					updateFloat(renderer, "_StripeHeight", state.stripeHeight);
 
 				if (config.updateStripeSine)
 				{
-					renderer.sharedMaterial.SetFloat("_StripeSineEnabled", state.stripeSineEnabled ? 1 : 0);
-					renderer.sharedMaterial.SetFloat("_StripeSinePeriod", state.stripeSinePeriod);
-					renderer.sharedMaterial.SetFloat("_StripeSineTwiddle", state.stripeSineTwiddle);
-					renderer.sharedMaterial.SetFloat("_StripeSineTwaddle", state.stripeSineTwaddle);
+					updateFloat(renderer, "_StripeSineEnabled", state.stripeSineEnabled ? 1 : 0);
+					updateFloat(renderer, "_StripeSinePeriod", state.stripeSinePeriod);
+					updateFloat(renderer, "_StripeSineTwiddle", state.stripeSineTwiddle);
+					updateFloat(renderer, "_StripeSineTwaddle", state.stripeSineTwaddle);
 					applyControlVal(renderer, "_StripeSineOffset", ref state.stripeSineOffset, config.stripeSineOffsetControl);
 					applyControlVal(renderer, "_StripeSineThreshold", ref state.stripeSineThreshold, config.stripeSineThresholdControl);
 				}
 				if (config.updateWipe)
 				{
-					renderer.sharedMaterial.SetFloat("_WipeEnabled", state.wipeEnabled ? 1 : 0);
-					renderer.sharedMaterial.SetFloat("_WipeNormalized", state.wipeNormalized ? 1 : 0);
-					renderer.sharedMaterial.SetFloat("_WipeSlope", state.wipeSlope);
+					updateFloat(renderer, "_WipeEnabled", state.wipeEnabled ? 1 : 0);
+					updateFloat(renderer, "_WipeNormalized", state.wipeNormalized ? 1 : 0);
+					updateFloat(renderer, "_WipeSlope", state.wipeSlope);
 					applyControlVal(renderer, "_WipeYOffset", ref state.wipeYOffset, config.wipeYOffsetControl);
-					renderer.sharedMaterial.SetFloat("_WipeSinePeriod", state.wipeSinePeriod);
-					renderer.sharedMaterial.SetFloat("_WipeSineScale", state.wipeSineScale);
-					renderer.sharedMaterial.SetFloat("_WipeSineInvertAxes", state.wipeSineInvertAxes ? 1 : 0);
+					updateFloat(renderer, "_WipeSinePeriod", state.wipeSinePeriod);
+					updateFloat(renderer, "_WipeSineScale", state.wipeSineScale);
+					updateFloat(renderer, "_WipeSineInvertAxes", state.wipeSineInvertAxes ? 1 : 0);
 					applyControlVal(renderer, "_WipeSineOffset", ref state.wipeSineOffset, config.wipeSineOffset);
 					applyControlVal(renderer, "_WipeSineThreshold", ref state.wipeSineThreshold, config.wipeSineThreshold);
-					renderer.sharedMaterial.SetFloat("_WipeSineTwiddle", state.wipeSineTwiddle);
-					renderer.sharedMaterial.SetFloat("_WipeSineTwaddle", state.wipeSineTwaddle);
-					renderer.sharedMaterial.SetFloat("_WipeSineShapePeriod", state.wipeSineShapePeriod);
+					updateFloat(renderer, "_WipeSineTwiddle", state.wipeSineTwiddle);
+					updateFloat(renderer, "_WipeSineTwaddle", state.wipeSineTwaddle);
+					updateFloat(renderer, "_WipeSineShapePeriod", state.wipeSineShapePeriod);
 					applyControlVal(renderer, "_WipeSineShapeOffset", ref state.wipeSineShapeOffset, config.wipeSineShapeOffset);
 					applyControlVal(renderer, "_WipeSineShapeScale", ref state.wipeSineShapeScale, config.wipeSineShapeScale);
-					renderer.sharedMaterial.SetFloat("_WipeSineShapeTwiddle", state.wipeSineShapeTwiddle);
-					renderer.sharedMaterial.SetFloat("_WipeSineShapeTwaddle", state.wipeSineShapeTwaddle);
+					updateFloat(renderer, "_WipeSineShapeTwiddle", state.wipeSineShapeTwiddle);
+					updateFloat(renderer, "_WipeSineShapeTwaddle", state.wipeSineShapeTwaddle);
 				}
 
 				if (config.updateRadial)
 				{
-					renderer.sharedMaterial.SetFloat("_RadialEnabled", state.radialEnabled ? 1 : 0);
-					renderer.sharedMaterial.SetFloat("_RadialNormalized", state.radialNormalized ? 1 : 0);
-					renderer.sharedMaterial.SetFloat("_RadialSinePeriod", state.radialSinePeriod);
+					updateFloat(renderer, "_RadialEnabled", state.radialEnabled ? 1 : 0);
+					updateFloat(renderer, "_RadialNormalized", state.radialNormalized ? 1 : 0);
+					updateFloat(renderer, "_RadialSinePeriod", state.radialSinePeriod);
 					applyControlVal(renderer, "_RadialSineOffset", ref state.radialSineOffset, config.radialSineOffsetControl);
 					applyControlVal(renderer, "_RadialSineThreshold", ref state.radialSineThreshold, config.radialSineThresholdControl);
-					renderer.sharedMaterial.SetFloat("_RadialSineScale", state.radialSineScale);
-					renderer.sharedMaterial.SetFloat("_RadialMinimum", state.radialMinimum);
-					renderer.sharedMaterial.SetVector("_RadialArcStart", state.radialArcStart);
-					renderer.sharedMaterial.SetVector("_RadialArcStop", state.radialArcStop);
-					renderer.sharedMaterial.SetFloat("_RadialX", state.radialPos.x);
-					renderer.sharedMaterial.SetFloat("_RadialY", state.radialPos.y);
+					updateFloat(renderer, "_RadialSineScale", state.radialSineScale);
+					updateFloat(renderer, "_RadialMinimum", state.radialMinimum);
+					updateVector(renderer, "_RadialArcStart", state.radialArcStart);
+					updateVector(renderer, "_RadialArcStop", state.radialArcStop);
+					updateFloat(renderer, "_RadialX", state.radialPos.x);
+					updateFloat(renderer, "_RadialY", state.radialPos.y);
 				}
 
 				if (config.updateRing)
 				{
-					renderer.sharedMaterial.SetFloat("_RingEnabled", state.ringEnabled ? 1 : 0);
-					renderer.sharedMaterial.SetFloat("_RingNormalized", state.ringNormalized ? 1 : 0);
-					renderer.sharedMaterial.SetFloat("_RingEnabled", state.ringEnabled ? 1 : 0);
-					renderer.sharedMaterial.SetFloat("_RingSinePeriod", state.ringSinePeriod);
-					renderer.sharedMaterial.SetFloat("_RingSineScale", state.ringSineScale);
-					renderer.sharedMaterial.SetFloat("_RingSineThreshold", state.ringSineThreshold);
+					updateFloat(renderer, "_RingEnabled", state.ringEnabled ? 1 : 0);
+					updateFloat(renderer, "_RingNormalized", state.ringNormalized ? 1 : 0);
+					updateFloat(renderer, "_RingEnabled", state.ringEnabled ? 1 : 0);
+					updateFloat(renderer, "_RingSinePeriod", state.ringSinePeriod);
+					updateFloat(renderer, "_RingSineScale", state.ringSineScale);
+					updateFloat(renderer, "_RingSineThreshold", state.ringSineThreshold);
 					applyControlVal(renderer, "_RingSineOffset", ref state.ringSineOffset, config.ringSineOffsetControl);
 					applyControlVal(renderer, "_RingSineThreshold", ref state.ringSineThreshold, config.ringSineThresholdControl);
-					renderer.sharedMaterial.SetVector("_RingScale", state.ringScale);
-					renderer.sharedMaterial.SetFloat("_RingX", state.ringPos.x);
-					renderer.sharedMaterial.SetFloat("_RingY", state.ringPos.y);
+					updateVector(renderer, "_RingScale", state.ringScale);
+					updateFloat(renderer, "_RingX", state.ringPos.x);
+					updateFloat(renderer, "_RingY", state.ringPos.y);
 				}
 			}
 		}
@@ -106,9 +106,31 @@ public class ShaderAnimController : MonoBehaviour
 
 	}
 
+	private void updateFloat(MeshRenderer renderer, string name, float state)
+	{
+		if (!Application.isPlaying)
+		{
+			renderer.sharedMaterial.SetFloat(name, state);
+			return;
+		}
+
+		renderer.material.SetFloat(name, state);
+	}
+
+	private void updateVector(MeshRenderer renderer, string name, Vector2 state)
+	{
+		if (!Application.isPlaying)
+		{
+			renderer.sharedMaterial.SetVector(name, state);
+			return;
+		}
+
+		renderer.material.SetVector(name, state);
+	}
+
 	private void applyControlVal(MeshRenderer renderer, string name, ref float state, ControlVal control)
 	{
-		if (!GameManager.Started)
+		if (!Application.isPlaying)
 		{
 			renderer.sharedMaterial.SetFloat(name, state);
 			return;
@@ -133,7 +155,7 @@ public class ShaderAnimController : MonoBehaviour
 				state += Time.fixedDeltaTime * control.speed;
 			}
 		}
-		renderer.sharedMaterial.SetFloat(name, assign);
+		renderer.material.SetFloat(name, assign);
 	}
 
 

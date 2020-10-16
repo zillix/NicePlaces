@@ -107,9 +107,9 @@ Material:
     - _WipeSineOffset: 567.4
     - _WipeSinePeriod: 0.006
     - _WipeSineScale: 11.4
-    - _WipeSineShapeOffset: 265.87454
+    - _WipeSineShapeOffset: 381.09915
     - _WipeSineShapePeriod: 0.07
-    - _WipeSineShapeScale: 53.826
+    - _WipeSineShapeScale: 24.741087
     - _WipeSineShapeTwaddle: 0
     - _WipeSineShapeTwiddle: 0
     - _WipeSineThreshold: 0

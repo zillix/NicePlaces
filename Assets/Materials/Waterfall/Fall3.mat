@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Backdrop
-  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_Name: Fall3
+  m_Shader: {fileID: 4800000, guid: 660994955172d644c979be122b660d68, type: 3}
+  m_ShaderKeywords: _STRIPESINEENABLED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -70,37 +70,60 @@ Material:
     - _Normalize: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RadialEnabled: 0
-    - _RadialNormalized: 0
-    - _RadialSineOffset: 0
-    - _RadialSinePeriod: 0
-    - _RadialSineScale: 0
+    - _RadialAngleArc: 0
+    - _RadialAngleStart: 0
+    - _RadialAngleStop: 0
+    - _RadialEnabled: 1
+    - _RadialMinimum: 0
+    - _RadialNormalized: 1
+    - _RadialSineOffset: -6.372167
+    - _RadialSinePeriod: 33
+    - _RadialSineScale: 0.13
     - _RadialSineThreshold: 0
-    - _RingEnabled: 0
-    - _RingNormalized: 0
-    - _RingSineOffset: 0.009099992
-    - _RingSinePeriod: 0
-    - _RingSineScale: 0
+    - _RingEnabled: 1
+    - _RingNormalized: 1
+    - _RingSineOffset: -1.6815245
+    - _RingSinePeriod: 15.65
+    - _RingSineScale: 5.3
     - _RingSineThreshold: 0
+    - _RingX: 0.49
+    - _RingY: 0.29
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StripeHeight: 5.69
+    - _StripeHeight: 1
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: 262.46936
-    - _StripeSinePeriod: 0.04
+    - _StripeSineOffset: -481.22015
+    - _StripeSinePeriod: 0.02
     - _StripeSineScale: 0
     - _StripeSineThreshold: 0
+    - _StripeSineTwiddle: 0
     - _UVSec: 0
-    - _WipeEnabled: 0
+    - _WipeEnabled: 1
     - _WipeNormalize: 0
-    - _WipeSlope: 1
+    - _WipeNormalized: 0
+    - _WipeSineInvertAxes: 0
+    - _WipeSineOffset: 567.4
+    - _WipeSinePeriod: 0.006
+    - _WipeSineScale: 11.4
+    - _WipeSineShapeOffset: 383.41965
+    - _WipeSineShapePeriod: 0.07
+    - _WipeSineShapeScale: 76.92671
+    - _WipeSineShapeTwaddle: 0
+    - _WipeSineShapeTwiddle: 0
+    - _WipeSineThreshold: 0
+    - _WipeSineTwaddle: 0
+    - _WipeSineTwiddle: 0
+    - _WipeSlope: 1.3
     - _WipeX: 0
-    - _WipeYOffset: 0
+    - _WipeYOffset: 0.003
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.94422317, g: 1, b: 0, a: 1}
-    - _Color1: {r: 0.8018868, g: 0.502951, b: 0.010590916, a: 1}
-    - _Color2: {r: 0.98039216, g: 0.65678364, b: 0.24313723, a: 1}
+    - _Color1: {r: 0.73794055, g: 0.8407939, b: 0.9716981, a: 1}
+    - _Color2: {r: 0.48940903, g: 0.7303755, b: 0.8867924, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
+    - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
+    - _RingScale: {r: 1, g: 0.2, b: 0, a: 0}
   m_BuildTextureStacks: []

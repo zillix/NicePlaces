@@ -82,7 +82,7 @@ Material:
     - _RadialSineThreshold: 0
     - _RingEnabled: 0
     - _RingNormalized: 1
-    - _RingSineOffset: -1.2587125
+    - _RingSineOffset: -1.4314039
     - _RingSinePeriod: 9.37
     - _RingSineScale: 1
     - _RingSineThreshold: -0
@@ -107,9 +107,9 @@ Material:
     - _WipeSineOffset: 500
     - _WipeSinePeriod: 0.003
     - _WipeSineScale: 11.4
-    - _WipeSineShapeOffset: 505.05493
+    - _WipeSineShapeOffset: 850.64087
     - _WipeSineShapePeriod: 0.02
-    - _WipeSineShapeScale: 60.042
+    - _WipeSineShapeScale: 38.228313
     - _WipeSineShapeTwaddle: 0
     - _WipeSineShapeTwiddle: 0
     - _WipeSineThreshold: 0.002

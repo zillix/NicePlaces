@@ -76,13 +76,13 @@ Material:
     - _RadialEnabled: 1
     - _RadialMinimum: 0
     - _RadialNormalized: 1
-    - _RadialSineOffset: -6.3318725
+    - _RadialSineOffset: -6.558019
     - _RadialSinePeriod: 33
     - _RadialSineScale: 0.13
     - _RadialSineThreshold: 0
     - _RingEnabled: 1
     - _RingNormalized: 1
-    - _RingSineOffset: -1.4803511
+    - _RingSineOffset: -2.6095836
     - _RingSinePeriod: 15.65
     - _RingSineScale: 5.3
     - _RingSineThreshold: 0

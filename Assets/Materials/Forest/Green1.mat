@@ -82,7 +82,7 @@ Material:
     - _RadialSineThreshold: 0
     - _RingEnabled: 1
     - _RingNormalized: 1
-    - _RingSineOffset: 2.4358604
+    - _RingSineOffset: 2.4060986
     - _RingSinePeriod: 10
     - _RingSineScale: 1.01
     - _RingSineThreshold: 0
@@ -94,7 +94,7 @@ Material:
     - _SrcBlend: 1
     - _StripeHeight: 1
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: 767.0716
+    - _StripeSineOffset: 1003.8149
     - _StripeSinePeriod: -0.02
     - _StripeSineScale: 0.59
     - _StripeSineThreshold: 0.8

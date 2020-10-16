@@ -93,7 +93,7 @@ Material:
     - _SrcBlend: 1
     - _StripeHeight: 1
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: -219.6042
+    - _StripeSineOffset: -507.62177
     - _StripeSinePeriod: 0.02
     - _StripeSineScale: 0
     - _StripeSineThreshold: 0
@@ -107,7 +107,7 @@ Material:
     - _WipeSineOffset: 0.82
     - _WipeSinePeriod: 0.006
     - _WipeSineScale: 11.4
-    - _WipeSineShapeOffset: 271.6839
+    - _WipeSineShapeOffset: 386.9085
     - _WipeSineShapePeriod: 0.02
     - _WipeSineShapeScale: 279.55
     - _WipeSineShapeTwaddle: 0
@@ -117,7 +117,7 @@ Material:
     - _WipeSineTwiddle: 0
     - _WipeSlope: 1.3
     - _WipeX: 0
-    - _WipeYOffset: -17.17
+    - _WipeYOffset: -53.526142
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.94422317, g: 1, b: 0, a: 1}

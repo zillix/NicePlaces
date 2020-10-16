@@ -110,6 +110,7 @@ public class ShaderAnimController : MonoBehaviour
 	{
 		if (!GameManager.Started)
 		{
+			renderer.sharedMaterial.SetFloat(name, state);
 			return;
 		}
 

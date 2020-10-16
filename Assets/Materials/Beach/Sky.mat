@@ -76,10 +76,10 @@ Material:
     - _RadialEnabled: 1
     - _RadialMinimum: 0.06
     - _RadialNormalized: 1
-    - _RadialSineOffset: 0.048199743
+    - _RadialSineOffset: -1.6456485
     - _RadialSinePeriod: 10.6
     - _RadialSineScale: 0.21
-    - _RadialSineThreshold: 0.00019999988
+    - _RadialSineThreshold: -0.059323784
     - _RingEnabled: 0
     - _RingNormalized: 0
     - _RingSineOffset: 0.009199992
@@ -94,7 +94,7 @@ Material:
     - _SrcBlend: 1
     - _StripeHeight: 5.69
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: 460.26233
+    - _StripeSineOffset: 262.45935
     - _StripeSinePeriod: 0.04
     - _StripeSineScale: 0.59
     - _StripeSineThreshold: 0

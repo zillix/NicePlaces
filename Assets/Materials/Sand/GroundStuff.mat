@@ -109,7 +109,7 @@ Material:
     - _WipeSineOffset: 0
     - _WipeSinePeriod: 2.1
     - _WipeSineScale: 0.48
-    - _WipeSineShapeOffset: -0.03408003
+    - _WipeSineShapeOffset: -0.725303
     - _WipeSineShapePeriod: 17.23
     - _WipeSineShapeScale: 3.32
     - _WipeSineShapeTwaddle: 0
@@ -119,12 +119,12 @@ Material:
     - _WipeSineTwiddle: 0
     - _WipeSlope: -14.04
     - _WipeX: 0.52
-    - _WipeYOffset: -1.4978002
+    - _WipeYOffset: -3.2259872
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.65553576, g: 0.7259973, b: 0.9339623, a: 1}
-    - _Color1: {r: 0.57796365, g: 0.6057649, b: 0.6415094, a: 1}
-    - _Color2: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
+    - _Color1: {r: 0.6079566, g: 0.6140033, b: 0.6226415, a: 1}
+    - _Color2: {r: 0.6886792, g: 0.6854307, b: 0.6854307, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
     - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}

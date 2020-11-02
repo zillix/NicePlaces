@@ -11,6 +11,8 @@ public class Lantern : MonoBehaviour
 	private float stopArcOffsetAngle;
 	private float radialSineOffset;
 
+	public Camera myCam;
+
 	private Vector2 offset;
 
 	public void Start()
@@ -24,7 +26,7 @@ public class Lantern : MonoBehaviour
 		radialSineOffset = controlledController.state.radialSineOffset;
 
 		Vector2 pos = swing.transform.position;
-		pos = Camera.main.WorldToScreenPoint(pos);
+		pos = myCam.WorldToScreenPoint(pos);
 		if (controlledController.state.radialNormalized)
 		{
 			pos = new Vector2(pos.x / Screen.width, pos.y / Screen.height);
@@ -45,7 +47,7 @@ public class Lantern : MonoBehaviour
 		controlledController.state.radialArcStop = radialArcStop;
 		controlledController.state.radialSineOffset = radialSineOffset + MathUtil.toRadians(-normAngle);
 		Vector3 pos = swing.transform.position;
-		pos = Camera.main.WorldToScreenPoint(pos);
+		pos = myCam.WorldToScreenPoint(pos);
 		if (controlledController.state.radialNormalized)
 		{
 			pos = new Vector3(pos.x / Screen.width, pos.y / Screen.height);

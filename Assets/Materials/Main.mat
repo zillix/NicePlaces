@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Main
+  m_Shader: {fileID: 4800000, guid: 660994955172d644c979be122b660d68, type: 3}
+  m_ShaderKeywords: _STRIPESINEENABLED_ON _TEXTUREMODE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture1:
+        m_Texture: {fileID: 8400000, guid: db795ee4a1478964eab5e34cf6f076c4, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2:
+        m_Texture: {fileID: 8400000, guid: f16e057392c27a14093e5657a7bf79cb, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Flip: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Height: 10
+    - _Metallic: 0
+    - _Mode: 0
+    - _Normalize: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _RadialEnabled: 0
+    - _RadialMinimum: 0
+    - _RadialNormalized: 0
+    - _RadialSineOffset: 0
+    - _RadialSinePeriod: 0
+    - _RadialSineScale: 0
+    - _RadialSineThreshold: 0
+    - _RingEnabled: 0
+    - _RingNormalized: 0
+    - _RingSineOffset: 0.009099992
+    - _RingSinePeriod: 0
+    - _RingSineScale: 0
+    - _RingSineThreshold: 0
+    - _RingX: 0
+    - _RingY: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _StripeHeight: 1
+    - _StripeSineEnabled: 1
+    - _StripeSineOffset: 262.46936
+    - _StripeSinePeriod: -0.02
+    - _StripeSineScale: 0
+    - _StripeSineThreshold: -2.52
+    - _StripeSineTwaddle: 2.79
+    - _StripeSineTwiddle: 0.53
+    - _TextureMode: 1
+    - _UVSec: 0
+    - _WipeEnabled: 0
+    - _WipeNormalize: 0
+    - _WipeNormalized: 0
+    - _WipeSineInvertAxes: 0
+    - _WipeSineOffset: 1
+    - _WipeSinePeriod: 0
+    - _WipeSineScale: 1
+    - _WipeSineShapeOffset: 0
+    - _WipeSineShapePeriod: 0
+    - _WipeSineShapeScale: 1
+    - _WipeSineShapeTwaddle: 0
+    - _WipeSineShapeTwiddle: 0
+    - _WipeSineThreshold: 0
+    - _WipeSineTwaddle: 0
+    - _WipeSineTwiddle: 0
+    - _WipeSlope: 1
+    - _WipeX: 0
+    - _WipeYOffset: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0.94422317, g: 1, b: 0, a: 1}
+    - _Color1: {r: 0.8018868, g: 0.502951, b: 0.010590916, a: 1}
+    - _Color2: {r: 0.98039216, g: 0.65678364, b: 0.24313723, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
+    - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
+    - _RingScale: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

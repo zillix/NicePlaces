@@ -2,8 +2,11 @@ Shader "Zillix/RowShader"
 {
 	Properties
 	{
+		_Texture1("Texture 1", 2D) = "" {}
+		_Texture2("Texture 2", 2D) = "" {}
 		_Color1("Color 1", Color) = (1,1,1,1)
 		_Color2("Color 2", Color) = (1,1,1,1)
+		[Toggle] _TextureMode("TextureMode", Float) = 0
 		[Toggle] _Flip("Flip", Float) = 0
 		[Toggle] _Normalize("Normalize", Float) = 0
 
@@ -13,7 +16,7 @@ Shader "Zillix/RowShader"
 		_StripeSinePeriod("Stripe Sine Period", Float) = 0
 		_StripeSineOffset("Stripe Sine Offset", Float) = 0
 		_StripeSineTwiddle("Stripe Sine Twiddle", Float) = 0
-		_StripeSineTwiddle("Stripe Sine Twaddle", Float) = 0
+		_StripeSineTwaddle("Stripe Sine Twaddle", Float) = 0
 		_StripeSineThreshold("Stripe Sine Threshold", Float) = 0
 
 		[Toggle] _WipeEnabled("Wipe Enabled", Float) = 0
@@ -59,6 +62,9 @@ Shader "Zillix/RowShader"
 
 		fixed4 _Color1;
 	fixed4 _Color2;
+	sampler2D _Texture1;
+	sampler2D _Texture2;
+	float _TextureMode;
 	float _Flip;
 	float _Normalize;
 	float _StripeHeight;
@@ -281,6 +287,9 @@ Shader "Zillix/RowShader"
 			}
 		}
 
+		if (_TextureMode) {
+			return flip ? tex2D(_Texture1, i.uv) : tex2D(_Texture2, i.uv);
+		}
 		return flip ? c2 : c1;
     }
 

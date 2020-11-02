@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FrontRock1
+  m_Name: FrontRock2
   m_Shader: {fileID: 4800000, guid: 660994955172d644c979be122b660d68, type: 3}
   m_ShaderKeywords: _RINGNORMALIZED_ON
   m_LightmapFlags: 4
@@ -88,14 +88,14 @@ Material:
     - _RadialSinePeriod: 0
     - _RadialSineScale: 0
     - _RadialSineThreshold: 0
-    - _RingEnabled: 1
+    - _RingEnabled: 0
     - _RingNormalized: 1
-    - _RingSineOffset: -4.031381
-    - _RingSinePeriod: 17.87
+    - _RingSineOffset: 0
+    - _RingSinePeriod: 18.85
     - _RingSineScale: 1
     - _RingSineThreshold: 0
-    - _RingX: -3.4
-    - _RingY: 1.09
+    - _RingX: -0.04
+    - _RingY: 25.33
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -130,10 +130,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.94422317, g: 1, b: 0, a: 1}
-    - _Color1: {r: 0.9245283, g: 0.9179868, b: 0.9114454, a: 1}
-    - _Color2: {r: 0.6841848, g: 0.69085974, b: 0.7075472, a: 1}
+    - _Color1: {r: 0.46479172, g: 0.9056604, b: 0.6033547, a: 1}
+    - _Color2: {r: 0.20679955, g: 0.6981132, b: 0.30979574, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
     - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
-    - _RingScale: {r: 2.37, g: 1, b: 0, a: 0}
+    - _RingScale: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -56,6 +56,12 @@ Shader "Zillix/RowShader"
 		_RingX("Ring X", Float) = 0
 		_RingY("Ring Y", Float) = 0
 
+		[Toggle] _DitherEnabled("Dither Enabled", Float) = 0
+		_DitherTexture("Dither Texture", 2D) = "" {}
+		_DitherScale("Dither Scale", float) = 1
+		_DitherThreshold("Dither Threshold", float) = .5
+		_DitherOffset("Dither Offset", Vector) = (0,0,0,0)
+
 	}
 
 		CGINCLUDE
@@ -118,6 +124,13 @@ Shader "Zillix/RowShader"
 
 	float _RingX;
 	float _RingY;
+
+	float _DitherEnabled;
+	sampler2D _DitherTexture;
+	float2 _DitherTexture_TexelSize;
+	float _DitherScale;
+	float _DitherThreshold;
+	float4 _DitherOffset;
 
 	
 
@@ -284,6 +297,18 @@ Shader "Zillix/RowShader"
 				if (sine > _RingSineThreshold) {
 					flip = !flip;
 				}
+			}
+		}
+
+		if (_DitherEnabled) {
+
+			float ditherX = (i.pos.x / _ScreenParams.x) + _DitherOffset.x; // i.uv.x;// / _ScreenParams.x;
+			float ditherY = (i.pos.y / _ScreenParams.x) + _DitherOffset.y; // i.uv.y;// / _ScreenParams.y;
+			float2 ditherCoordinate = float2(ditherX, ditherY);
+			ditherCoordinate *= _DitherScale;
+			float dither = tex2D(_DitherTexture, ditherCoordinate).r;// +(.5f / 256);
+			if (dither > _DitherThreshold) {
+				flip = !flip;
 			}
 		}
 

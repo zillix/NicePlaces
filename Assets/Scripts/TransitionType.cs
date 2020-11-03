@@ -9,5 +9,6 @@ public enum TransitionType
 	SineStripe,
 	Wipe,
 	Radial,
-	Ring
+	Ring,
+	Dither
 }

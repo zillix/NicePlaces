@@ -47,25 +47,27 @@ public class GameManager : MonoBehaviour
 
 	private void transition(int previousIndex, int newIndex)
 	{
-		setUp(previousIndex, newIndex);
+		setUp(previousIndex, newIndex, true);
 
 		PlaceData oldData = Places[previousIndex];
 		PlaceData newData = Places[newIndex];
 		Material transMaterial = mainRenderer.material;
-		TransitionType transType = oldData.transitionType;
-		StartCoroutine(doTransition(transMaterial, transType, oldData.tickTime, oldData.transitionPerTick));
+		TransitionType transType = newData.transitionType;
+		StartCoroutine(doTransition(transMaterial, transType, newData.tickTime, newData.transitionPerTick));
 	}
 
-	private void setUp(int index, int index2 = -1)
+	private void setUp(int index, int index2 = -1, bool useIndex2 = false)
 	{
 		if (Places.Count <= index)
 			return;
 
+		PlaceData transitionPlace = useIndex2 ? Places[index2] : Places[index];
+
 		PlaceData data = Places[index];
-		mainRenderer.material = data.transitionMaterial;
+		mainRenderer.material = transitionPlace.transitionMaterial;
 		mainRenderer.material.SetTexture("_Texture1", data.renderTexture);
-		string transitionFieldName = getTransitionFieldName(data.transitionType);
-		mainRenderer.material.SetFloat(transitionFieldName, -1);
+		string transitionFieldName = getTransitionFieldName(transitionPlace.transitionType);
+		mainRenderer.material.SetFloat(transitionFieldName, getTransitionStart(transitionPlace.transitionType));
 
 		if (index2 >= 0)
 		{
@@ -76,15 +78,35 @@ public class GameManager : MonoBehaviour
 
 	private IEnumerator doTransition(Material transitionMaterial, TransitionType transType, float tickTime, float amtPerTick)
 	{
-		float transitionVal = -1;
+		float transitionVal = getTransitionStart(transType);
 		float valPerFrame = amtPerTick;
 		string transitionFieldName = getTransitionFieldName(transType);
 		
-		while (transitionVal < 1)
+		while (transitionVal < getTransitionEnd(transType))
 		{
 			transitionVal += valPerFrame;
 			transitionMaterial.SetFloat(transitionFieldName, transitionVal);
 			yield return new WaitForSeconds(tickTime);
+		}
+	}
+
+	private float getTransitionStart(TransitionType transType)
+	{
+		switch (transType)
+		{
+			case TransitionType.Dither:
+				return 0;
+			default:
+				return -1;
+		}
+	}
+
+	private float getTransitionEnd(TransitionType transType)
+	{
+		switch (transType)
+		{
+			default:
+				return 1;
 		}
 	}
 
@@ -103,6 +125,8 @@ public class GameManager : MonoBehaviour
 				return "_StripeSineThreshold";
 			case TransitionType.Wipe:
 				return "_WipeSineThreshold";
+			case TransitionType.Dither:
+				return "_DitherThreshold";
 		}
 	}
 }

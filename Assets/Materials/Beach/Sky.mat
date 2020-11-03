@@ -35,6 +35,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DitherTexture:
+        m_Texture: {fileID: 2800000, guid: 31c29822dbe8d614abf8a70ea90c32a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -55,10 +59,21 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DitherEnabled: 0
+    - _DitherScale: 51.7
+    - _DitherThreshold: 0.9
     - _DstBlend: 0
     - _Flip: 0
     - _GlossMapScale: 1
@@ -76,10 +91,10 @@ Material:
     - _RadialEnabled: 1
     - _RadialMinimum: 0.06
     - _RadialNormalized: 1
-    - _RadialSineOffset: -1.6456485
+    - _RadialSineOffset: 0.048199743
     - _RadialSinePeriod: 10.6
     - _RadialSineScale: 0.21
-    - _RadialSineThreshold: -0.059323784
+    - _RadialSineThreshold: 0
     - _RingEnabled: 0
     - _RingNormalized: 0
     - _RingSineOffset: 0.009199992
@@ -94,11 +109,13 @@ Material:
     - _SrcBlend: 1
     - _StripeHeight: 5.69
     - _StripeSineEnabled: 1
-    - _StripeSineOffset: 262.45935
+    - _StripeSineOffset: 460.27234
     - _StripeSinePeriod: 0.04
     - _StripeSineScale: 0.59
     - _StripeSineThreshold: 0
+    - _StripeSineTwaddle: 0
     - _StripeSineTwiddle: 0
+    - _TextureMode: 0
     - _UVSec: 0
     - _WineSineShapeTwaddle: 0
     - _WipeEnabled: 0
@@ -124,6 +141,7 @@ Material:
     - _Color: {r: 0.65553576, g: 0.7259973, b: 0.9339623, a: 1}
     - _Color1: {r: 0.57706267, g: 0.25117472, b: 0.9716981, a: 1}
     - _Color2: {r: 0.60312915, g: 0.35542893, b: 0.9811321, a: 1}
+    - _DitherOffset: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
     - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}

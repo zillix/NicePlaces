@@ -89,6 +89,7 @@ Material:
     - _RadialAngleArc: 0
     - _RadialAngleStart: 0
     - _RadialAngleStop: 0
+    - _RadialDitherPow: 3
     - _RadialEnabled: 1
     - _RadialMinimum: 0.06
     - _RadialNormalized: 1
@@ -96,9 +97,10 @@ Material:
     - _RadialSineOffset: 0.048199743
     - _RadialSinePeriod: 10.6
     - _RadialSineScale: 1.4
-    - _RadialSineThreshold: 0
+    - _RadialSineThreshold: 0.69
     - _RadialX: 0.22
     - _RadialY: 0.9
+    - _RingDitherPow: 1
     - _RingEnabled: 0
     - _RingNormalized: 0
     - _RingSineDitherEnabled: 1
@@ -112,6 +114,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _StripeDitherPow: 1
     - _StripeHeight: 1
     - _StripeSineDitherEnabled: 1
     - _StripeSineEnabled: 1

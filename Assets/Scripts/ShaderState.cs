@@ -57,8 +57,11 @@ public class ShaderState
 
 
 	public bool stripeSineDitherEnabled;
+	public float stripeDitherPow = 1;
 	public bool radialSineDitherEnabled;
+	public float radialDitherPow = 1;
 	public bool ringSineDitherEnabled;
+	public float ringDitherPow = 1;
 	public float ditherScale = 1;
 	public Texture ditherTexture;
 

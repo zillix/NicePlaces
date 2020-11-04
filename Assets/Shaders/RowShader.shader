@@ -14,6 +14,7 @@ Shader "Zillix/RowShader"
 		_StripeHeight("Stripe Height", Float) = 10
 		[Toggle] _StripeSineEnabled("Stripe Sine Enabled", Float) = 0
 		[Toggle] _StripeSineDitherEnabled("Stripe Sine Dither Enabled", Float) = 0
+		_StripeDitherPow("Stripe Dither Pow", Float) = 1
 		_StripeSinePeriod("Stripe Sine Period", Float) = 0
 		_StripeSineOffset("Stripe Sine Offset", Float) = 0
 		_StripeSineTwiddle("Stripe Sine Twiddle", Float) = 0
@@ -40,6 +41,7 @@ Shader "Zillix/RowShader"
 		[Toggle] _RadialEnabled("Radial Enabled", Float) = 0
 		[Toggle] _RadialNormalized("Radial Normalized", Float) = 0
 		[Toggle] _RadialSineDitherEnabled("Radial Sine Dither Enabled", Float) = 0
+		_RadialDitherPow("Radial Dither Pow", Float) = 1
 		_RadialSinePeriod("Radial Sine Period", Float) = 0
 		_RadialSineScale("Radial Sine Scale", Float) = 1
 		_RadialSineOffset("Radial Sine Offset", Float) = 0
@@ -53,6 +55,7 @@ Shader "Zillix/RowShader"
 		[Toggle] _RingEnabled("Ring Enabled", Float) = 0
 		[Toggle] _RingNormalized("Ring Normalized", Float) = 0
 		[Toggle] _RingSineDitherEnabled("Ring Sine Dither Enabled", Float) = 0
+		_RingDitherPow("Ring Dither Pow", Float) = 1
 		_RingSinePeriod("Ring Sine Period", Float) = 0
 		_RingSineScale("Ring Sine Scale", Float) = 0
 		_RingSineOffset("Ring Sine Offset", Float) = 0
@@ -87,6 +90,7 @@ Shader "Zillix/RowShader"
 	float _StripeSineOffset;
 	float _StripeSineThreshold;
 	float _StripeSineDitherEnabled;
+	float _StripeDitherPow = 1;
 
 	float _WipeEnabled;
 	float _WipeNormalized;
@@ -115,6 +119,7 @@ Shader "Zillix/RowShader"
 	float4 _RadialArcStart;
 	float4 _RadialArcStop;
 	float _RadialSineDitherEnabled;
+	float _RadialDitherPow = 1;
 
 	float _RadialX;
 	float _RadialY;
@@ -127,6 +132,7 @@ Shader "Zillix/RowShader"
 	float _RingSineThreshold;
 	float4 _RingScale;
 	float _RingSineDitherEnabled;
+	float _RingDitherPow = 1;
 	//float _RadialLength = 1
 	//float _RadialX[1];
 
@@ -203,7 +209,8 @@ Shader "Zillix/RowShader"
 			float rawStripeSine = sin(sinInput);
 			float stripeSine = _StripeHeight * rawStripeSine;
 			if (_StripeSineDitherEnabled) {
-				float sineDitherThreshold = (stripeSine + 1) / 2;
+				float ditherMid = pow((_StripeSineThreshold + 1) / 2, _StripeDitherPow);
+				float sineDitherThreshold = (stripeSine + 2 * ditherMid) / 2;
 				flip = sineDitherThreshold > ditherVal ? !flip : flip; // true : false; // !flip : flip;
 			}
 			else if (stripeSine > _StripeSineThreshold)
@@ -329,7 +336,9 @@ Shader "Zillix/RowShader"
 						float sine = _RadialSineScale * rawSine;
 						
 						if (_RadialSineDitherEnabled) {
-							float sineDitherThreshold = pow(sine, 1); // (rawSine + 1) / 2;
+							float ditherMid = (_RadialSineThreshold + 1) / 2;
+							float sineDitherThreshold = pow((sine + 2 * ditherMid) / 2, _RadialDitherPow);
+							//float sineDitherThreshold = pow(sine, 1); // (rawSine + 1) / 2;
 							flip = sineDitherThreshold > ditherVal ? !flip : flip; // false : true; // !flip : flip;
 						}
 						else if (sine > _RadialSineThreshold) {
@@ -364,7 +373,10 @@ Shader "Zillix/RowShader"
 				float rawSine = sin((dist + _RingSineOffset) * _RingSinePeriod);
 				float sine = _RingSineScale * rawSine;
 				if (_RingSineDitherEnabled) {
-					float sineDitherThreshold = (sine + 1) / 2;//pow(sine, 2); // (sine + 1) / 2;
+					float ditherMid = (_RingSineThreshold + 1) / 2;
+					float sineDitherThreshold = pow((sine + 2 * ditherMid) / 2, _RingDitherPow);
+
+					//float sineDitherThreshold = pow((sine + 1) / 2, _RingDitherPow);//pow(sine, 2); // (sine + 1) / 2;
 					flip = sineDitherThreshold > ditherVal ? !flip : flip; // false : true; // !flip : flip;
 				}
 				else if (sine > _RingSineThreshold) {

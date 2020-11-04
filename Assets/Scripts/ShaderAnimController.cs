@@ -104,8 +104,11 @@ public class ShaderAnimController : MonoBehaviour
 				if (config.updateDither)
 				{
 					updateFloat(renderer, "_StripeSineDitherEnabled", state.stripeSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_StripeDitherPow", state.stripeDitherPow);
 					updateFloat(renderer, "_RadialSineDitherEnabled", state.radialSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_RadialDitherPow", state.radialDitherPow);
 					updateFloat(renderer, "_RingSineDitherEnabled", state.ringSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_RingDitherPow", state.ringDitherPow);
 					updateFloat(renderer, "_DitherScale", state.ditherScale);
 					updateTexture(renderer, "_DitherTexture", state.ditherTexture);
 				}

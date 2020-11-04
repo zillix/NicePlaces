@@ -100,6 +100,15 @@ public class ShaderAnimController : MonoBehaviour
 					updateFloat(renderer, "_RingX", state.ringPos.x);
 					updateFloat(renderer, "_RingY", state.ringPos.y);
 				}
+
+				if (config.updateDither)
+				{
+					updateFloat(renderer, "_StripeSineDitherEnabled", state.stripeSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_RadialSineDitherEnabled", state.radialSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_RingSineDitherEnabled", state.ringSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_DitherScale", state.ditherScale);
+					updateTexture(renderer, "_DitherTexture", state.ditherTexture);
+				}
 			}
 		}
 
@@ -126,6 +135,17 @@ public class ShaderAnimController : MonoBehaviour
 		}
 
 		renderer.material.SetVector(name, state);
+	}
+
+	private void updateTexture(MeshRenderer renderer, string name, Texture state)
+	{
+		if (!Application.isPlaying)
+		{
+			renderer.sharedMaterial.SetTexture(name, state);
+			return;
+		}
+
+		renderer.material.SetTexture(name, state);
 	}
 
 	private void applyControlVal(MeshRenderer renderer, string name, ref float state, ControlVal control)

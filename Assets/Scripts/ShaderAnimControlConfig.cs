@@ -13,6 +13,7 @@ public class ShaderAnimControlConfig
 	public bool updateWipe;
 	public bool updateRadial;
 	public bool updateRing;
+	public bool updateDither;
 
 	public ControlVal stripeSineOffsetControl;
 	public ControlVal stripeSineThresholdControl;

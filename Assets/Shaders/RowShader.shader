@@ -364,7 +364,7 @@ Shader "Zillix/RowShader"
 				float rawSine = sin((dist + _RingSineOffset) * _RingSinePeriod);
 				float sine = _RingSineScale * rawSine;
 				if (_RingSineDitherEnabled) {
-					float sineDitherThreshold = (sine + 1) / 2;
+					float sineDitherThreshold = (sine + 1) / 2;//pow(sine, 2); // (sine + 1) / 2;
 					flip = sineDitherThreshold > ditherVal ? !flip : flip; // false : true; // !flip : flip;
 				}
 				else if (sine > _RingSineThreshold) {

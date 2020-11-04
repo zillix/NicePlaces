@@ -103,8 +103,8 @@ Material:
     - _RingNormalized: 1
     - _RingSineDitherEnabled: 1
     - _RingSineOffset: 0.020619994
-    - _RingSinePeriod: 57.9
-    - _RingSineScale: 19.7
+    - _RingSinePeriod: 27.4
+    - _RingSineScale: 8.2
     - _RingSineThreshold: 1.241
     - _RingX: 198.2
     - _RingY: 918.3

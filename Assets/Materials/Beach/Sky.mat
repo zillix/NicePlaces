@@ -101,6 +101,7 @@ Material:
     - _RadialY: 0.9
     - _RingEnabled: 0
     - _RingNormalized: 0
+    - _RingSineDitherEnabled: 1
     - _RingSineOffset: 0.009199992
     - _RingSinePeriod: 0
     - _RingSineScale: 0

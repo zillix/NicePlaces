@@ -55,5 +55,12 @@ public class ShaderState
 	public Vector2 ringScale = new Vector2(1, 1);
 	public Vector2 ringPos;
 
+
+	public bool stripeSineDitherEnabled;
+	public bool radialSineDitherEnabled;
+	public bool ringSineDitherEnabled;
+	public float ditherScale = 1;
+	public Texture ditherTexture;
+
 	public Animator animator;
 }

@@ -146,12 +146,35 @@ Shader "Zillix/RowShader"
 	float _DitherThreshold;
 	float4 _DitherOffset;
 
-	
+#include "UnityCG.cginc"
+
+	//the object data that's put into the vertex shader
+	struct appdata {
+		float4 vertex : POSITION;
+		float2 uv : TEXCOORD0;
+	};
+
+	//the data that's used to generate fragments and can be read by the fragment shader
+	struct v2f {
+		float4 pos : SV_POSITION;
+		float2 uv : TEXCOORD0;
+		float4 screenPosition : TEXCOORD1;
+	};
+
+	//the vertex shader
+	v2f vert(appdata v) {
+		v2f o;
+		//convert the vertex positions from object space to clip space so they can be rendered
+		o.pos = UnityObjectToClipPos(v.vertex);
+		o.uv = v.uv;
+		o.screenPosition = ComputeScreenPos(o.pos);
+		return o;
+	}
 
 	
     #include "UnityCG.cginc"
 
-    float4 frag(v2f_img i) : SV_Target 
+    float4 frag(v2f i) : SV_Target 
 	{
 		/*float4 glitch = tex2D(_ScrollTex, i.uv);
 
@@ -178,12 +201,32 @@ Shader "Zillix/RowShader"
 		float2 ditherCoordinate = float2(0, 0);
 		if (anyDither) {
 
-			float ditherX = (i.pos.x / _ScreenParams.x) + _DitherOffset.x; // i.uv.x;// / _ScreenParams.x;
-			float ditherY = (i.pos.y / _ScreenParams.x) + _DitherOffset.y; // i.uv.y;// / _ScreenParams.y;
-			float2 ditherCoordinate = float2(ditherX, ditherY);
-			ditherCoordinate *= _DitherScale;
-			ditherVal = tex2D(_DitherTexture, ditherCoordinate).r;// +(.5f / 256); // gamma correction?
-			if (_DitherEnabled && ditherVal > _DitherThreshold) {
+			/*float pixelX = i.pos.x;// *1024;
+			float pixelY = i.pos.y;// *1024;
+			//pixelX = floor(pixelX / _DitherScale) * _DitherScale;
+			//pixelY = floor(pixelY / _DitherScale) * _DitherScale;
+			if ((int(pixelX / _DitherScale*4)) % 2 == 1){// && pixelY % 2 != 1) {
+				flip = !flip;
+			}
+			if ((int(pixelY / _DitherScale*4)) % 2 == 0) {// && pixelY % 2 != 1) {
+				flip = !flip;
+			}*/
+
+			/*float2 screenPos = i.screenPosition.xy / i.screenPosition.w;
+			float2 ditherCoordinate = screenPos * _ScreenParams.xy * _DitherTexture_TexelSize.xy;
+			float ditherValue = tex2D(_DitherTexture, ditherCoordinate).r;
+			if (ditherValue > .5f) {
+				flip = !flip;
+			}*/
+
+
+			float ditherX = (i.pos.x * _DitherScale / _ScreenParams.x) + _DitherOffset.x; // i.uv.x;// / _ScreenParams.x;
+			float ditherY = (i.pos.y * _DitherScale / _ScreenParams.x) + _DitherOffset.y; // i.uv.y;// / _ScreenParams.y;
+			ditherCoordinate = float2(ditherX, ditherY);
+			//ditherCoordinate *= _DitherScale;
+			
+			ditherVal = tex2D(_DitherTexture, ditherCoordinate).r;
+			if (_DitherEnabled && ditherVal >= _DitherThreshold) {
 				flip = !flip;
 			}
 

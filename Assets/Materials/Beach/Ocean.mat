@@ -73,7 +73,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DitherEnabled: 0
-    - _DitherScale: 18
+    - _DitherScale: 16
     - _DitherThreshold: 0.5
     - _DstBlend: 0
     - _Flip: 0

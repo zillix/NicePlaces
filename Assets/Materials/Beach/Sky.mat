@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Sky
   m_Shader: {fileID: 4800000, guid: 660994955172d644c979be122b660d68, type: 3}
-  m_ShaderKeywords: _NORMALIZE_ON _RADIALNORMALIZED_ON _WIPENORMALIZE_ON
+  m_ShaderKeywords: _RADIALNORMALIZED_ON _RADIALSINEDITHERENABLED_ON _STRIPESINEDITHERENABLED_ON
+    _WIPENORMALIZE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -72,8 +73,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DitherEnabled: 0
-    - _DitherScale: 51.7
-    - _DitherThreshold: 0.9
+    - _DitherScale: 18
+    - _DitherThreshold: 0.57
     - _DstBlend: 0
     - _Flip: 0
     - _GlossMapScale: 1
@@ -91,26 +92,30 @@ Material:
     - _RadialEnabled: 1
     - _RadialMinimum: 0.06
     - _RadialNormalized: 1
+    - _RadialSineDitherEnabled: 1
     - _RadialSineOffset: 0.048199743
     - _RadialSinePeriod: 10.6
-    - _RadialSineScale: 0.21
+    - _RadialSineScale: 1.4
     - _RadialSineThreshold: 0
+    - _RadialX: 0.22
+    - _RadialY: 0.9
     - _RingEnabled: 0
     - _RingNormalized: 0
     - _RingSineOffset: 0.009199992
     - _RingSinePeriod: 0
     - _RingSineScale: 0
-    - _RingSineThreshold: 0
+    - _RingSineThreshold: -0.08
     - _RingX: 0
     - _RingY: 0
     - _RowHeight: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StripeHeight: 5.69
+    - _StripeHeight: 1
+    - _StripeSineDitherEnabled: 1
     - _StripeSineEnabled: 1
     - _StripeSineOffset: 460.27234
-    - _StripeSinePeriod: 0.04
+    - _StripeSinePeriod: 0.02
     - _StripeSineScale: 0.59
     - _StripeSineThreshold: 0
     - _StripeSineTwaddle: 0

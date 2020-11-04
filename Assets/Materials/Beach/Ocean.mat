@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Ocean
   m_Shader: {fileID: 4800000, guid: 660994955172d644c979be122b660d68, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _RADIALSINEDITHERENABLED_ON _RINGNORMALIZED_ON _RINGSINEDITHERENABLED_ON
+    _STRIPESINEDITHERENABLED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -36,7 +37,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DitherTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 31c29822dbe8d614abf8a70ea90c32a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -72,7 +73,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DitherEnabled: 0
-    - _DitherScale: 1
+    - _DitherScale: 18
     - _DitherThreshold: 0.5
     - _DstBlend: 0
     - _Flip: 0
@@ -91,12 +92,16 @@ Material:
     - _RadialEnabled: 1
     - _RadialMinimum: 0.06
     - _RadialNormalized: 1
+    - _RadialSineDitherEnabled: 1
     - _RadialSineOffset: 0.048199743
     - _RadialSinePeriod: 10.6
-    - _RadialSineScale: 0.21
+    - _RadialSineScale: 1.4
     - _RadialSineThreshold: 0
+    - _RadialX: 0.22
+    - _RadialY: 0.9
     - _RingEnabled: 1
     - _RingNormalized: 1
+    - _RingSineDitherEnabled: 1
     - _RingSineOffset: 0.020619994
     - _RingSinePeriod: 57.9
     - _RingSineScale: 19.7
@@ -106,10 +111,11 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StripeHeight: 5.69
+    - _StripeHeight: 1
+    - _StripeSineDitherEnabled: 1
     - _StripeSineEnabled: 1
     - _StripeSineOffset: 460.27234
-    - _StripeSinePeriod: 0.04
+    - _StripeSinePeriod: 0.02
     - _StripeSineScale: 0
     - _StripeSineThreshold: 0
     - _StripeSineTwaddle: 0

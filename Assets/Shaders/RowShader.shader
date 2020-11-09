@@ -7,6 +7,8 @@ Shader "Zillix/RowShader"
 		_Color1("Color 1", Color) = (1,1,1,1)
 		_Color2("Color 2", Color) = (1,1,1,1)
 		[Toggle] _TextureMode("TextureMode", Float) = 0
+		[Toggle] _DerezTexture("Derez Texture", Float) = 0
+		_TextureResolution("Texture Resolution", Vector) = (1024,1024,0,0)
 		[Toggle] _Flip("Flip", Float) = 0
 		[Toggle] _Normalize("Normalize", Float) = 0
 
@@ -73,6 +75,9 @@ Shader "Zillix/RowShader"
 	}
 
 		CGINCLUDE
+
+	float _DerezTexture;
+	float4 _TextureResolution;
 
 		fixed4 _Color1;
 	fixed4 _Color2;
@@ -429,7 +434,17 @@ Shader "Zillix/RowShader"
 		}
 
 		if (_TextureMode) {
-			return flip ? tex2D(_Texture1, i.uv) : tex2D(_Texture2, i.uv);
+			float2 texUv = i.uv.xy;
+			if (_DerezTexture) {
+				float2 pos = texUv;
+				float2 rez = _ScreenParams.xy / _TextureResolution.xy;
+				pos.x = floor(pos.x * _ScreenParams.x / rez.x) * rez.x / _ScreenParams.x;
+				pos.y = floor(pos.y * _ScreenParams.y / rez.y) * rez.y / _ScreenParams.y;
+				//pos.y = floor(pos.y / 1) * 1;
+
+				texUv = pos;
+			}
+			return flip ? tex2D(_Texture1, texUv) : tex2D(_Texture2, texUv);
 		}
 		return flip ? c2 : c1;
     }

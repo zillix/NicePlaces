@@ -74,6 +74,8 @@ Shader "Zillix/RowShader"
 		_DitherThreshold("Dither Threshold", float) = .5
 		_DitherOffsetX("Dither Offset X", float) = 0
 		_DitherOffsetY("Dither Offset Y", float) = 0
+		_DitherBandVal("Dither Band Val", float) = 0
+			_DitherBandWidth("Dither Band Width", float) = 0
 
 	}
 
@@ -156,6 +158,8 @@ Shader "Zillix/RowShader"
 	float _DitherThreshold;
 	float _DitherOffsetX;
 	float _DitherOffsetY;
+	float _DitherBandVal;
+	float _DitherBandWidth;
 
 #include "UnityCG.cginc"
 
@@ -237,9 +241,19 @@ Shader "Zillix/RowShader"
 			//ditherCoordinate *= _DitherScale;
 			
 			ditherVal = tex2D(_DitherTexture, ditherCoordinate).r;
-			if (_DitherEnabled && ditherVal >= _DitherThreshold) {
-				flip = !flip;
+			if (_DitherEnabled) {
+				if (_DitherBandWidth != 0) {
+					if (abs(ditherVal - _DitherBandVal) < _DitherBandWidth) {
+						flip = !flip;
+					}
+				}
+				if (ditherVal >= _DitherThreshold) {
+					flip = !flip;
+				}
 			}
+			/*if (_DitherEnabled && ditherVal >= _DitherThreshold) {
+				flip = !flip;
+			}*/
 
 			float ditherRez = (_DitherTexture_TexelSize.x) *  _ScreenParams.x / _DitherScale;
 			// derez

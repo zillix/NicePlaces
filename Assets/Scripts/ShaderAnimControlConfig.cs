@@ -29,4 +29,6 @@ public class ShaderAnimControlConfig
 	public ControlVal ditherAllOffsetX;
 	public ControlVal ditherAllOffsetY;
 	public ControlVal ditherAllThreshold;
+	public ControlVal ditherBandVal;
+	public ControlVal ditherBandWidth;
 }

@@ -15,6 +15,8 @@ public class ShaderState
 	public Texture ditherTexture;
 	public float ditherOffsetX = 0;
 	public float ditherOffsetY = 0;
+	public float ditherBandVal = 0;
+	public float ditherBandWidth = 0;
 
 	public float stripeHeight;
 

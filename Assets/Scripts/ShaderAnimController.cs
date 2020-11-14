@@ -118,6 +118,8 @@ public class ShaderAnimController : MonoBehaviour
 					applyControlVal(renderer, "_DitherOffsetX", ref state.ditherOffsetX, config.ditherAllOffsetX);
 					applyControlVal(renderer, "_DitherOffsetY", ref state.ditherOffsetY, config.ditherAllOffsetY);
 					applyControlVal(renderer, "_DitherThreshold", ref state.ditherAllThreshold, config.ditherAllThreshold);
+					applyControlVal(renderer, "_DitherBandVal", ref state.ditherBandVal, config.ditherBandVal);
+					applyControlVal(renderer, "_DitherBandWidth", ref state.ditherBandWidth, config.ditherBandWidth);
 				}
 			}
 		}

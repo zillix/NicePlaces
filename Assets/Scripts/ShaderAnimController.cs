@@ -117,7 +117,7 @@ public class ShaderAnimController : MonoBehaviour
 					updateTexture(renderer, "_DitherTexture", state.ditherTexture);
 					applyControlVal(renderer, "_DitherOffsetX", ref state.ditherOffsetX, config.ditherAllOffsetX);
 					applyControlVal(renderer, "_DitherOffsetY", ref state.ditherOffsetY, config.ditherAllOffsetY);
-					applyControlVal(renderer, "_DitherThreshold", ref state.ditherThreshold, config.ditherAllThreshold);
+					applyControlVal(renderer, "_DitherThreshold", ref state.ditherAllThreshold, config.ditherAllThreshold);
 				}
 			}
 		}

@@ -25,7 +25,7 @@ public class Swing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 		offsetAngle += Time.fixedDeltaTime * swingPeriod;
 

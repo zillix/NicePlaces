@@ -11,6 +11,11 @@ public class ShaderState
 	public bool ditherAll;
 	public float ditherAllThreshold;
 
+	public float ditherScale = 1;
+	public Texture ditherTexture;
+	public float ditherOffsetX = 0;
+	public float ditherOffsetY = 0;
+
 	public float stripeHeight;
 
 	public bool stripeSineEnabled;
@@ -66,11 +71,6 @@ public class ShaderState
 	public Vector2 ringPos;
 
 
-	public float ditherScale = 1;
-	public Texture ditherTexture;
-	public float ditherOffsetX = 0;
-	public float ditherOffsetY = 0;
-	public float ditherThreshold = 0;
 
 	public Animator animator;
 }

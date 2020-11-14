@@ -34,7 +34,7 @@ public class Lantern : MonoBehaviour
 		offset = controlledController.state.radialPos - pos;
 
 	}
-	public void FixedUpdate()
+	public void Update()
 	{
 
 		Vector3 delta = swing.transform.position - swing.anchor.position;

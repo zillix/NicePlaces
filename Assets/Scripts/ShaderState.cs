@@ -8,10 +8,14 @@ public class ShaderState
 {
 	public bool normalize;
 	public bool flip;
+	public bool ditherAll;
+	public float ditherAllThreshold;
 
 	public float stripeHeight;
 
 	public bool stripeSineEnabled;
+	public bool stripeSineDitherEnabled;
+	public float stripeDitherPow = 1;
 	public float stripeSinePeriod;
 	public float stripeSineTwiddle;
 	public float stripeSineTwaddle;
@@ -19,6 +23,8 @@ public class ShaderState
 	public float stripeSineThreshold;
 
 	public bool wipeEnabled;
+	public bool wipeSineDitherEnabled;
+	public float wipeDitherPow = 1;
 	public bool wipeNormalized;
 	public float wipeSlope;
 	public float wipeYOffset;
@@ -36,6 +42,8 @@ public class ShaderState
 	public float wipeSineShapeTwaddle;
 
 	public bool radialEnabled;
+	public bool radialSineDitherEnabled;
+	public float radialDitherPow = 1;
 	public bool radialNormalized;
 	public float radialSinePeriod;
 	public float radialSineScale;
@@ -47,6 +55,8 @@ public class ShaderState
 	public Vector2 radialPos;
 
 	public bool ringEnabled;
+	public bool ringSineDitherEnabled;
+	public float ringDitherPow = 1;
 	public bool ringNormalized;
 	public float ringSinePeriod;
 	public float ringSineScale;
@@ -56,14 +66,11 @@ public class ShaderState
 	public Vector2 ringPos;
 
 
-	public bool stripeSineDitherEnabled;
-	public float stripeDitherPow = 1;
-	public bool radialSineDitherEnabled;
-	public float radialDitherPow = 1;
-	public bool ringSineDitherEnabled;
-	public float ringDitherPow = 1;
 	public float ditherScale = 1;
 	public Texture ditherTexture;
+	public float ditherOffsetX = 0;
+	public float ditherOffsetY = 0;
+	public float ditherThreshold = 0;
 
 	public Animator animator;
 }

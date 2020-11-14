@@ -45,6 +45,8 @@ public class ShaderAnimController : MonoBehaviour
 				if (config.updateStripeSine)
 				{
 					updateFloat(renderer, "_StripeSineEnabled", state.stripeSineEnabled ? 1 : 0);
+					updateFloat(renderer, "_StripeSineDitherEnabled", state.stripeSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_StripeDitherPow", state.stripeDitherPow);
 					updateFloat(renderer, "_StripeSinePeriod", state.stripeSinePeriod);
 					updateFloat(renderer, "_StripeSineTwiddle", state.stripeSineTwiddle);
 					updateFloat(renderer, "_StripeSineTwaddle", state.stripeSineTwaddle);
@@ -54,6 +56,8 @@ public class ShaderAnimController : MonoBehaviour
 				if (config.updateWipe)
 				{
 					updateFloat(renderer, "_WipeEnabled", state.wipeEnabled ? 1 : 0);
+					updateFloat(renderer, "_WipeSineDitherEnabled", state.wipeSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_WipeDitherPow", state.wipeDitherPow);
 					updateFloat(renderer, "_WipeNormalized", state.wipeNormalized ? 1 : 0);
 					updateFloat(renderer, "_WipeSlope", state.wipeSlope);
 					applyControlVal(renderer, "_WipeYOffset", ref state.wipeYOffset, config.wipeYOffsetControl);
@@ -74,6 +78,8 @@ public class ShaderAnimController : MonoBehaviour
 				if (config.updateRadial)
 				{
 					updateFloat(renderer, "_RadialEnabled", state.radialEnabled ? 1 : 0);
+					updateFloat(renderer, "_RadialSineDitherEnabled", state.radialSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_RadialDitherPow", state.radialDitherPow);
 					updateFloat(renderer, "_RadialNormalized", state.radialNormalized ? 1 : 0);
 					updateFloat(renderer, "_RadialSinePeriod", state.radialSinePeriod);
 					applyControlVal(renderer, "_RadialSineOffset", ref state.radialSineOffset, config.radialSineOffsetControl);
@@ -88,6 +94,8 @@ public class ShaderAnimController : MonoBehaviour
 
 				if (config.updateRing)
 				{
+					updateFloat(renderer, "_RingSineDitherEnabled", state.ringSineDitherEnabled ? 1 : 0);
+					updateFloat(renderer, "_RingDitherPow", state.ringDitherPow);
 					updateFloat(renderer, "_RingEnabled", state.ringEnabled ? 1 : 0);
 					updateFloat(renderer, "_RingNormalized", state.ringNormalized ? 1 : 0);
 					updateFloat(renderer, "_RingEnabled", state.ringEnabled ? 1 : 0);
@@ -103,14 +111,13 @@ public class ShaderAnimController : MonoBehaviour
 
 				if (config.updateDither)
 				{
-					updateFloat(renderer, "_StripeSineDitherEnabled", state.stripeSineDitherEnabled ? 1 : 0);
-					updateFloat(renderer, "_StripeDitherPow", state.stripeDitherPow);
-					updateFloat(renderer, "_RadialSineDitherEnabled", state.radialSineDitherEnabled ? 1 : 0);
-					updateFloat(renderer, "_RadialDitherPow", state.radialDitherPow);
-					updateFloat(renderer, "_RingSineDitherEnabled", state.ringSineDitherEnabled ? 1 : 0);
-					updateFloat(renderer, "_RingDitherPow", state.ringDitherPow);
+					updateFloat(renderer, "_DitherEnabled", state.ditherAll ? 1 : 0);
+					updateFloat(renderer, "_DitherThreshold", state.ditherAllThreshold);
 					updateFloat(renderer, "_DitherScale", state.ditherScale);
 					updateTexture(renderer, "_DitherTexture", state.ditherTexture);
+					applyControlVal(renderer, "_DitherOffsetX", ref state.ditherOffsetX, config.ditherAllOffsetX);
+					applyControlVal(renderer, "_DitherOffsetY", ref state.ditherOffsetY, config.ditherAllOffsetY);
+					applyControlVal(renderer, "_DitherThreshold", ref state.ditherThreshold, config.ditherAllThreshold);
 				}
 			}
 		}

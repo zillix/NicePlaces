@@ -70,10 +70,13 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _DerezTexture: 0
     - _DetailNormalMapScale: 1
     - _DitherEnabled: 0
+    - _DitherOffsetX: 0
+    - _DitherOffsetY: 0
     - _DitherScale: 16
-    - _DitherThreshold: 0.5
+    - _DitherThreshold: 0
     - _DstBlend: 0
     - _Flip: 0
     - _GlossMapScale: 1
@@ -125,9 +128,11 @@ Material:
     - _TextureMode: 0
     - _UVSec: 0
     - _WineSineShapeTwaddle: 0
+    - _WipeDitherPow: 1
     - _WipeEnabled: 0
     - _WipeNormalize: 0
     - _WipeNormalized: 0
+    - _WipeSineDitherEnabled: 0
     - _WipeSineInvertAxes: 0
     - _WipeSineOffset: 1
     - _WipeSinePeriod: 0
@@ -153,4 +158,5 @@ Material:
     - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
     - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
     - _RingScale: {r: 0, g: 0, b: 0, a: 0}
+    - _TextureResolution: {r: 1024, g: 1024, b: 0, a: 0}
   m_BuildTextureStacks: []

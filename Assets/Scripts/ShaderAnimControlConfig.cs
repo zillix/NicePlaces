@@ -26,4 +26,7 @@ public class ShaderAnimControlConfig
 	public ControlVal radialSineThresholdControl;
 	public ControlVal ringSineOffsetControl;
 	public ControlVal ringSineThresholdControl;
+	public ControlVal ditherAllOffsetX;
+	public ControlVal ditherAllOffsetY;
+	public ControlVal ditherAllThreshold;
 }

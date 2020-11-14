@@ -25,6 +25,8 @@ Shader "Zillix/RowShader"
 
 		[Toggle] _WipeEnabled("Wipe Enabled", Float) = 0
 		[Toggle] _WipeNormalized("Wipe Normalized", Float) = 0
+		[Toggle] _WipeSineDitherEnabled("Wipe Sine Dither Enabled", Float) = 0
+		_WipeDitherPow("Wipe Dither Pow", Float) = 1
 		_WipeSlope("Wipe Slope", Float) = 0
 		_WipeYOffset("Wipe Y Offset", Float) = 0
 		_WipeSinePeriod("Wipe Sine Period", Float) = 0
@@ -70,7 +72,8 @@ Shader "Zillix/RowShader"
 		_DitherTexture("Dither Texture", 2D) = "" {}
 		_DitherScale("Dither Scale", float) = 1
 		_DitherThreshold("Dither Threshold", float) = .5
-		_DitherOffset("Dither Offset", Vector) = (0,0,0,0)
+		_DitherOffsetX("Dither Offset X", float) = 0
+		_DitherOffsetY("Dither Offset Y", float) = 0
 
 	}
 
@@ -98,6 +101,8 @@ Shader "Zillix/RowShader"
 	float _StripeDitherPow = 1;
 
 	float _WipeEnabled;
+	float _WipeSineDitherEnabled;
+	float _WipeDitherPow = 1;
 	float _WipeNormalized;
 	float _WipeSlope;
 	float _WipeYOffset;
@@ -149,7 +154,8 @@ Shader "Zillix/RowShader"
 	float2 _DitherTexture_TexelSize;
 	float _DitherScale;
 	float _DitherThreshold;
-	float4 _DitherOffset;
+	float _DitherOffsetX;
+	float _DitherOffsetY;
 
 #include "UnityCG.cginc"
 
@@ -202,7 +208,7 @@ Shader "Zillix/RowShader"
 		float2 ditherPos = float2(0, 0);
 		float ditherVal = 0;
 
-		bool anyDither = _DitherEnabled || _StripeSineDitherEnabled || _RadialSineDitherEnabled || _RingSineDitherEnabled;
+		bool anyDither = _DitherEnabled || _StripeSineDitherEnabled || _RadialSineDitherEnabled || _RingSineDitherEnabled || _WipeSineDitherEnabled;
 		float2 ditherCoordinate = float2(0, 0);
 		if (anyDither) {
 
@@ -225,8 +231,8 @@ Shader "Zillix/RowShader"
 			}*/
 
 
-			float ditherX = (i.pos.x * _DitherScale / _ScreenParams.x) + _DitherOffset.x; // i.uv.x;// / _ScreenParams.x;
-			float ditherY = (i.pos.y * _DitherScale / _ScreenParams.x) + _DitherOffset.y; // i.uv.y;// / _ScreenParams.y;
+			float ditherX = (i.pos.x * _DitherScale / _ScreenParams.x) + _DitherOffsetX; // i.uv.x;// / _ScreenParams.x;
+			float ditherY = (i.pos.y * _DitherScale / _ScreenParams.x) + _DitherOffsetY; // i.uv.y;// / _ScreenParams.y;
 			ditherCoordinate = float2(ditherX, ditherY);
 			//ditherCoordinate *= _DitherScale;
 			
@@ -311,8 +317,15 @@ Shader "Zillix/RowShader"
 				sinInput = -_WipeSineTwiddle * cos(sinAngle) + sinAngle * (_WipeSineTwiddle + _WipeSineTwaddle);
 			}
 			float stripeSine = _WipeSineScale * sin(sinInput);
-			if (stripeSine > _WipeSineThreshold)
+			if (_WipeSineDitherEnabled) {
+				//flip = false;
+				float ditherMid = pow((_WipeSineThreshold + 1) / 2, _WipeDitherPow);
+				float sineDitherThreshold = (stripeSine + 2 * ditherMid) / 2;
+				flip = sineDitherThreshold > ditherVal ? !flip : flip; // true : false; // !flip : flip;
+			}
+			else if (stripeSine > _WipeSineThreshold) {
 				flip = !flip;
+			}
 		}
 
 		// Radial
@@ -401,7 +414,10 @@ Shader "Zillix/RowShader"
 		if (_RingEnabled) {
 			float2 pos = i.pos.xy;
 			if (_RingSineDitherEnabled) {
-				pos = ditherPos;
+				float ditherRez = (_DitherTexture_TexelSize.x) *  _ScreenParams.x / _DitherScale;
+				// derez
+				pos.x = floor(pos.x / ditherRez) * ditherRez;
+				pos.y = floor(pos.y / ditherRez) * ditherRez;
 			}
 
 
@@ -421,11 +437,34 @@ Shader "Zillix/RowShader"
 				float rawSine = sin((dist + _RingSineOffset) * _RingSinePeriod);
 				float sine = _RingSineScale * rawSine;
 				if (_RingSineDitherEnabled) {
+					/*
+					// old garbage
+					*/
 					float ditherMid = (_RingSineThreshold + 1) / 2;
 					float sineDitherThreshold = pow((sine + 2 * ditherMid) / 2, _RingDitherPow);
+					flip = sineDitherThreshold > ditherVal ? !flip : flip;
+
+					/*
+					// new garbage
+					float ditherMid = (_RingSineThreshold + 1) / 2;
+					//float sign = abs(sine) / sine;
+					//float sineDitherThreshold = (pow(abs(sine), _RingDitherPow) * sign + 2 * ditherMid) / 2;
+					//float ditherSine = (sine + 1) / 2;
+					//float sign = abs(ditherSine) / ditherSine;
+					//float delta = ditherSine - ditherMid;
+					//delta = pow(delta, _RingDitherPow) * sign;
+					//float sineDitherThreshold = ditherMid + delta;
+
+					float sineDitherThreshold = pow((sine + 2 * ditherMid) / 2, _RingDitherPow);
+					//sineDitherThreshold += ditherMid - .5;
+														   //sineDitherThreshold /= sqrt(2);
+
+					// as pow increases, get closer to this:
+					// sineDitherThreshold = sine > 0 ? 1 : 0;
 
 					//float sineDitherThreshold = pow((sine + 1) / 2, _RingDitherPow);//pow(sine, 2); // (sine + 1) / 2;
 					flip = sineDitherThreshold > ditherVal ? !flip : flip; // false : true; // !flip : flip;
+					*/
 				}
 				else if (sine > _RingSineThreshold) {
 					flip = !flip;

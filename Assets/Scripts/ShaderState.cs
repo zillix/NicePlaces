@@ -22,6 +22,7 @@ public class ShaderState
 
 	public bool stripeSineEnabled;
 	public bool stripeSineDitherEnabled;
+	public Texture stripeDitherTexture;
 	public float stripeDitherPow = 1;
 	public float stripeSinePeriod;
 	public float stripeSineTwiddle;
@@ -31,6 +32,7 @@ public class ShaderState
 
 	public bool wipeEnabled;
 	public bool wipeSineDitherEnabled;
+	public Texture wipeDitherTexture;
 	public float wipeDitherPow = 1;
 	public bool wipeNormalized;
 	public float wipeSlope;
@@ -50,6 +52,7 @@ public class ShaderState
 
 	public bool radialEnabled;
 	public bool radialSineDitherEnabled;
+	public Texture radialDitherTexture;
 	public float radialDitherPow = 1;
 	public bool radialNormalized;
 	public float radialSinePeriod;
@@ -63,6 +66,7 @@ public class ShaderState
 
 	public bool ringEnabled;
 	public bool ringSineDitherEnabled;
+	public Texture ringDitherTexture;
 	public float ringDitherPow = 1;
 	public bool ringNormalized;
 	public float ringSinePeriod;

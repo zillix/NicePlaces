@@ -16,6 +16,7 @@ Shader "Zillix/RowShader"
 		_StripeHeight("Stripe Height", Float) = 10
 		[Toggle] _StripeSineEnabled("Stripe Sine Enabled", Float) = 0
 		[Toggle] _StripeSineDitherEnabled("Stripe Sine Dither Enabled", Float) = 0
+		_StripeDitherOverrideTexture("Stripe Dither Override Texture", 2D) = "" {}
 		_StripeDitherPow("Stripe Dither Pow", Float) = 1
 		_StripeSinePeriod("Stripe Sine Period", Float) = 0
 		_StripeSineOffset("Stripe Sine Offset", Float) = 0
@@ -26,6 +27,7 @@ Shader "Zillix/RowShader"
 		[Toggle] _WipeEnabled("Wipe Enabled", Float) = 0
 		[Toggle] _WipeNormalized("Wipe Normalized", Float) = 0
 		[Toggle] _WipeSineDitherEnabled("Wipe Sine Dither Enabled", Float) = 0
+		_WipeDitherOverrideTexture("Wipe Dither Override Texture", 2D) = "" {}
 		_WipeDitherPow("Wipe Dither Pow", Float) = 1
 		_WipeSlope("Wipe Slope", Float) = 0
 		_WipeYOffset("Wipe Y Offset", Float) = 0
@@ -45,6 +47,7 @@ Shader "Zillix/RowShader"
 		[Toggle] _RadialEnabled("Radial Enabled", Float) = 0
 		[Toggle] _RadialNormalized("Radial Normalized", Float) = 0
 		[Toggle] _RadialSineDitherEnabled("Radial Sine Dither Enabled", Float) = 0
+		_RadialDitherOverrideTexture("Radial Dither Override Texture", 2D) = "" {}
 		_RadialDitherPow("Radial Dither Pow", Float) = 1
 		_RadialSinePeriod("Radial Sine Period", Float) = 0
 		_RadialSineScale("Radial Sine Scale", Float) = 1
@@ -59,6 +62,7 @@ Shader "Zillix/RowShader"
 		[Toggle] _RingEnabled("Ring Enabled", Float) = 0
 		[Toggle] _RingNormalized("Ring Normalized", Float) = 0
 		[Toggle] _RingSineDitherEnabled("Ring Sine Dither Enabled", Float) = 0
+		_RingDitherOverrideTexture("Ring Dither Override Texture", 2D) = "" {}
 		_RingDitherPow("Ring Dither Pow", Float) = 1
 		_RingSinePeriod("Ring Sine Period", Float) = 0
 		_RingSineScale("Ring Sine Scale", Float) = 0
@@ -101,9 +105,11 @@ Shader "Zillix/RowShader"
 	float _StripeSineThreshold;
 	float _StripeSineDitherEnabled;
 	float _StripeDitherPow = 1;
+	sampler2D _StripeDitherOverrideTexture;
 
 	float _WipeEnabled;
 	float _WipeSineDitherEnabled;
+	sampler2D _WipeDitherOverrideTexture;
 	float _WipeDitherPow = 1;
 	float _WipeNormalized;
 	float _WipeSlope;
@@ -132,6 +138,7 @@ Shader "Zillix/RowShader"
 	float4 _RadialArcStop;
 	float _RadialSineDitherEnabled;
 	float _RadialDitherPow = 1;
+	sampler2D _RadialDitherOverrideTexture;
 
 	float _RadialX;
 	float _RadialY;
@@ -145,6 +152,7 @@ Shader "Zillix/RowShader"
 	float4 _RingScale;
 	float _RingSineDitherEnabled;
 	float _RingDitherPow = 1;
+	sampler2D _RingDitherOverrideTexture;
 	//float _RadialLength = 1
 	//float _RadialX[1];
 
@@ -216,29 +224,10 @@ Shader "Zillix/RowShader"
 		float2 ditherCoordinate = float2(0, 0);
 		if (anyDither) {
 
-			/*float pixelX = i.pos.x;// *1024;
-			float pixelY = i.pos.y;// *1024;
-			//pixelX = floor(pixelX / _DitherScale) * _DitherScale;
-			//pixelY = floor(pixelY / _DitherScale) * _DitherScale;
-			if ((int(pixelX / _DitherScale*4)) % 2 == 1){// && pixelY % 2 != 1) {
-				flip = !flip;
-			}
-			if ((int(pixelY / _DitherScale*4)) % 2 == 0) {// && pixelY % 2 != 1) {
-				flip = !flip;
-			}*/
-
-			/*float2 screenPos = i.screenPosition.xy / i.screenPosition.w;
-			float2 ditherCoordinate = screenPos * _ScreenParams.xy * _DitherTexture_TexelSize.xy;
-			float ditherValue = tex2D(_DitherTexture, ditherCoordinate).r;
-			if (ditherValue > .5f) {
-				flip = !flip;
-			}*/
-
 
 			float ditherX = (i.pos.x * _DitherScale / _ScreenParams.x) + _DitherOffsetX; // i.uv.x;// / _ScreenParams.x;
 			float ditherY = (i.pos.y * _DitherScale / _ScreenParams.x) + _DitherOffsetY; // i.uv.y;// / _ScreenParams.y;
 			ditherCoordinate = float2(ditherX, ditherY);
-			//ditherCoordinate *= _DitherScale;
 			
 			ditherVal = tex2D(_DitherTexture, ditherCoordinate).r;
 			if (_DitherEnabled) {
@@ -251,9 +240,6 @@ Shader "Zillix/RowShader"
 					flip = !flip;
 				}
 			}
-			/*if (_DitherEnabled && ditherVal >= _DitherThreshold) {
-				flip = !flip;
-			}*/
 
 			float ditherRez = (_DitherTexture_TexelSize.x) *  _ScreenParams.x / _DitherScale;
 			// derez
@@ -267,6 +253,7 @@ Shader "Zillix/RowShader"
 			float2 pos = float2(x, y);
 			if (_StripeSineDitherEnabled) {
 				pos = ditherPos;
+				ditherVal = tex2D(_StripeDitherOverrideTexture, ditherCoordinate).r;
 			}
 
 			float sinAngle = (pos.y + _StripeSineOffset) * _StripeSinePeriod;
@@ -305,6 +292,10 @@ Shader "Zillix/RowShader"
 				float temp = baseX;
 				baseX = baseY;// 1 / (_WipeSlope == 0 ? .0001 : _WipeSlope);
 				baseY = temp;
+			}
+
+			if (_WipeSineDitherEnabled) {
+				ditherVal = tex2D(_WipeDitherOverrideTexture, ditherCoordinate).r;
 			}
 
 
@@ -354,6 +345,8 @@ Shader "Zillix/RowShader"
 				// derez
 				pos.x = floor(pos.x / ditherRez) * ditherRez;
 				pos.y = floor(pos.y / ditherRez) * ditherRez;
+
+				ditherVal = tex2D(_RadialDitherOverrideTexture, ditherCoordinate).r;
 			}
 
 
@@ -432,6 +425,8 @@ Shader "Zillix/RowShader"
 				// derez
 				pos.x = floor(pos.x / ditherRez) * ditherRez;
 				pos.y = floor(pos.y / ditherRez) * ditherRez;
+
+				ditherVal = tex2D(_RingDitherOverrideTexture, ditherCoordinate).r;
 			}
 
 

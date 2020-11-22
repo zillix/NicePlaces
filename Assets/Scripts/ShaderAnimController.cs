@@ -46,6 +46,7 @@ public class ShaderAnimController : MonoBehaviour
 				{
 					updateFloat(renderer, "_StripeSineEnabled", state.stripeSineEnabled ? 1 : 0);
 					updateFloat(renderer, "_StripeSineDitherEnabled", state.stripeSineDitherEnabled ? 1 : 0);
+					updateTexture(renderer, "_StripeDitherOverrideTexture", state.stripeDitherTexture);
 					updateFloat(renderer, "_StripeDitherPow", state.stripeDitherPow);
 					updateFloat(renderer, "_StripeSinePeriod", state.stripeSinePeriod);
 					updateFloat(renderer, "_StripeSineTwiddle", state.stripeSineTwiddle);
@@ -57,6 +58,7 @@ public class ShaderAnimController : MonoBehaviour
 				{
 					updateFloat(renderer, "_WipeEnabled", state.wipeEnabled ? 1 : 0);
 					updateFloat(renderer, "_WipeSineDitherEnabled", state.wipeSineDitherEnabled ? 1 : 0);
+					updateTexture(renderer, "_WipeDitherOverrideTexture", state.wipeDitherTexture);
 					updateFloat(renderer, "_WipeDitherPow", state.wipeDitherPow);
 					updateFloat(renderer, "_WipeNormalized", state.wipeNormalized ? 1 : 0);
 					updateFloat(renderer, "_WipeSlope", state.wipeSlope);
@@ -79,6 +81,7 @@ public class ShaderAnimController : MonoBehaviour
 				{
 					updateFloat(renderer, "_RadialEnabled", state.radialEnabled ? 1 : 0);
 					updateFloat(renderer, "_RadialSineDitherEnabled", state.radialSineDitherEnabled ? 1 : 0);
+					updateTexture(renderer, "_RadialDitherOverrideTexture", state.radialDitherTexture);
 					updateFloat(renderer, "_RadialDitherPow", state.radialDitherPow);
 					updateFloat(renderer, "_RadialNormalized", state.radialNormalized ? 1 : 0);
 					updateFloat(renderer, "_RadialSinePeriod", state.radialSinePeriod);
@@ -95,6 +98,7 @@ public class ShaderAnimController : MonoBehaviour
 				if (config.updateRing)
 				{
 					updateFloat(renderer, "_RingSineDitherEnabled", state.ringSineDitherEnabled ? 1 : 0);
+					updateTexture(renderer, "_RingDitherOverrideTexture", state.ringDitherTexture);
 					updateFloat(renderer, "_RingDitherPow", state.ringDitherPow);
 					updateFloat(renderer, "_RingEnabled", state.ringEnabled ? 1 : 0);
 					updateFloat(renderer, "_RingNormalized", state.ringNormalized ? 1 : 0);

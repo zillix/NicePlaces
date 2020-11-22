@@ -35,6 +35,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DitherTexture:
+        m_Texture: {fileID: 2800000, guid: 926900f89324723469c836d4185dd284, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -55,6 +59,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RadialDitherOverrideTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RingDitherOverrideTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StripeDitherOverrideTexture:
+        m_Texture: {fileID: 2800000, guid: 7ecd8ce4cd1bb194ca897d5506cb7327, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -63,10 +79,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _WipeDitherOverrideTexture:
+        m_Texture: {fileID: 2800000, guid: 31c29822dbe8d614abf8a70ea90c32a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _DerezTexture: 0
     - _DetailNormalMapScale: 1
+    - _DitherBandVal: 0
+    - _DitherBandWidth: 0.04
+    - _DitherEnabled: 0
+    - _DitherOffsetX: 0
+    - _DitherOffsetY: 0
+    - _DitherScale: 16
+    - _DitherThreshold: 0.16
     - _DstBlend: 0
     - _Flip: 0
     - _GlossMapScale: 1
@@ -75,21 +103,27 @@ Material:
     - _Height: 10
     - _Metallic: 0
     - _Mode: 0
-    - _Normalize: 1
+    - _Normalize: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RadialAngleArc: 0
     - _RadialAngleStart: 0
     - _RadialAngleStop: 0
+    - _RadialDitherPow: 1
     - _RadialEnabled: 0
     - _RadialMinimum: 0
     - _RadialNormalized: 0
+    - _RadialSineDitherEnabled: 0
     - _RadialSineOffset: 0
     - _RadialSinePeriod: 0
     - _RadialSineScale: 0
     - _RadialSineThreshold: 0
+    - _RadialX: 0
+    - _RadialY: 0
+    - _RingDitherPow: 1
     - _RingEnabled: 0
     - _RingNormalized: 1
+    - _RingSineDitherEnabled: 0
     - _RingSineOffset: 0
     - _RingSinePeriod: 18.85
     - _RingSineScale: 1
@@ -99,19 +133,23 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StripeHeight: 1
+    - _StripeDitherPow: 1
+    - _StripeHeight: 0.91
+    - _StripeSineDitherEnabled: 1
     - _StripeSineEnabled: 1
     - _StripeSineOffset: 0.008
-    - _StripeSinePeriod: 16.35
+    - _StripeSinePeriod: 0.02
     - _StripeSineScale: 0
     - _StripeSineThreshold: 0
     - _StripeSineTwaddle: 0
     - _StripeSineTwiddle: 0
     - _TextureMode: 0
     - _UVSec: 0
+    - _WipeDitherPow: 1
     - _WipeEnabled: 0
     - _WipeNormalize: 0
     - _WipeNormalized: 0
+    - _WipeSineDitherEnabled: 0
     - _WipeSineInvertAxes: 0
     - _WipeSineOffset: 0.82
     - _WipeSinePeriod: 0.006
@@ -136,4 +174,5 @@ Material:
     - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
     - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
     - _RingScale: {r: 1, g: 1, b: 0, a: 0}
+    - _TextureResolution: {r: 1024, g: 1024, b: 0, a: 0}
   m_BuildTextureStacks: []

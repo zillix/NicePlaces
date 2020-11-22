@@ -60,6 +60,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RadialDitherOverrideTexture:
+        m_Texture: {fileID: 2800000, guid: 31c29822dbe8d614abf8a70ea90c32a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RingDitherOverrideTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StripeDitherOverrideTexture:
+        m_Texture: {fileID: 2800000, guid: 31c29822dbe8d614abf8a70ea90c32a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -68,11 +80,17 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _WipeDitherOverrideTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DerezTexture: 0
     - _DetailNormalMapScale: 1
+    - _DitherBandVal: 0
+    - _DitherBandWidth: 0
     - _DitherEnabled: 0
     - _DitherOffsetX: 0
     - _DitherOffsetY: 0

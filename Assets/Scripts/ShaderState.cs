@@ -34,6 +34,7 @@ public class ShaderState
 	public bool wipeSineDitherEnabled;
 	public Texture wipeDitherTexture;
 	public float wipeDitherPow = 1;
+	public float wipeDitherScale = 1;
 	public bool wipeNormalized;
 	public float wipeSlope;
 	public float wipeYOffset;
@@ -67,6 +68,7 @@ public class ShaderState
 	public bool ringEnabled;
 	public bool ringSineDitherEnabled;
 	public Texture ringDitherTexture;
+	public float ringDitherScale = 1;
 	public float ringDitherPow = 1;
 	public bool ringNormalized;
 	public float ringSinePeriod;
@@ -75,6 +77,10 @@ public class ShaderState
 	public float ringSineThreshold;
 	public Vector2 ringScale = new Vector2(1, 1);
 	public Vector2 ringPos;
+
+	public float stripeSineOffset2;
+	public float wipeSineOffset2;
+	public float wipeSineShapeOffset2;
 
 
 

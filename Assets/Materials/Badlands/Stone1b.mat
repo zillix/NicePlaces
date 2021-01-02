@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RenderBadlands
+  m_Name: Stone1b
   m_Shader: {fileID: 4800000, guid: 660994955172d644c979be122b660d68, type: 3}
-  m_ShaderKeywords: _DEREZTEXTURE_ON _TEXTUREMODE_ON
+  m_ShaderKeywords: _RINGNORMALIZED_ON _STRIPESINEENABLED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DitherTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 921e9fea3133d2740b3aed0412227b2d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: db795ee4a1478964eab5e34cf6f076c4, type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -60,121 +60,123 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RadialDitherOverrideTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 31c29822dbe8d614abf8a70ea90c32a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RingDitherOverrideTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 31c29822dbe8d614abf8a70ea90c32a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _StripeDitherOverrideTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture:
-        m_Texture: {fileID: 8400000, guid: db795ee4a1478964eab5e34cf6f076c4, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _Texture1:
-        m_Texture: {fileID: 8400000, guid: db795ee4a1478964eab5e34cf6f076c4, type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2:
-        m_Texture: {fileID: 8400000, guid: e91180d5b6665d54c82343aa21d010dc, type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WipeDitherOverrideTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 31c29822dbe8d614abf8a70ea90c32a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _DerezTexture: 1
+    - _DerezTexture: 0
     - _DetailNormalMapScale: 1
-    - _DitherBandVal: 0
-    - _DitherBandWidth: 0
-    - _DitherEnabled: 0
+    - _DitherBandVal: 0.5
+    - _DitherBandWidth: 0.005
+    - _DitherEnabled: 1
     - _DitherOffsetX: 0
     - _DitherOffsetY: 0
-    - _DitherScale: 1
-    - _DitherThreshold: 0.5
+    - _DitherScale: 2
+    - _DitherSclae: 1
+    - _DitherThreshold: 0
     - _DstBlend: 0
-    - _Flip: 0
+    - _Flip: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Height: 10
     - _Metallic: 0
     - _Mode: 0
-    - _Normalize: 0
+    - _Normalize: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RadialAngleArc: 0
+    - _RadialAngleStart: 0
+    - _RadialAngleStop: 0
     - _RadialDitherPow: 1
     - _RadialEnabled: 0
     - _RadialMinimum: 0
     - _RadialNormalized: 0
     - _RadialSineDitherEnabled: 0
     - _RadialSineOffset: 0
-    - _RadialSinePeriod: 0
-    - _RadialSineScale: 1
+    - _RadialSinePeriod: 10.09
+    - _RadialSineScale: 2.16
     - _RadialSineThreshold: 0
     - _RadialX: 0
     - _RadialY: 0
-    - _RingDitherPow: 1
+    - _RingDitherPow: 7.78
     - _RingEnabled: 0
-    - _RingNormalized: 0
-    - _RingSineDitherEnabled: 0
-    - _RingSineOffset: 0
-    - _RingSinePeriod: 0
-    - _RingSineScale: 0
-    - _RingSineThreshold: 0
+    - _RingNormalized: 1
+    - _RingSineDitherEnabled: 1
+    - _RingSineOffset: -6.89
+    - _RingSinePeriod: 6.48
+    - _RingSineScale: 1.72
+    - _RingSineThreshold: 0.86
     - _RingX: 0
-    - _RingY: 0
+    - _RingY: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _StripeDitherPow: 1
-    - _StripeHeight: 10
+    - _StripeHeight: 1
     - _StripeSineDitherEnabled: 0
     - _StripeSineEnabled: 0
-    - _StripeSineOffset: 0
+    - _StripeSineOffset: 1043.7
     - _StripeSineOffset2: 0
-    - _StripeSinePeriod: 0
-    - _StripeSineThreshold: 0
+    - _StripeSinePeriod: 22.77
+    - _StripeSineScale: 0
+    - _StripeSineThreshold: 0.62
     - _StripeSineTwaddle: 0
     - _StripeSineTwiddle: 0
-    - _TextureMode: 1
+    - _TextureMode: 0
     - _UVSec: 0
-    - _WipeDitherPow: 1
-    - _WipeEnabled: 0
-    - _WipeNormalized: 0
-    - _WipeSineDitherEnabled: 0
-    - _WipeSineInvertAxes: 0
-    - _WipeSineOffset: 1
-    - _WipeSineOffset2: 0
-    - _WipeSinePeriod: 0
-    - _WipeSineScale: 1
-    - _WipeSineShapeOffset: 0
+    - _WipeDitherPow: 0.6
+    - _WipeEnabled: 1
+    - _WipeNormalize: 0
+    - _WipeNormalized: 1
+    - _WipeSineDitherEnabled: 1
+    - _WipeSineInvertAxes: 1
+    - _WipeSineOffset: 0
+    - _WipeSineOffset2: -0.46
+    - _WipeSinePeriod: 0.91
+    - _WipeSineScale: -1.31
+    - _WipeSineShapeOffset: 421
     - _WipeSineShapeOffset2: 0
-    - _WipeSineShapePeriod: 0
-    - _WipeSineShapeScale: 1
+    - _WipeSineShapePeriod: 19.2
+    - _WipeSineShapeScale: 16.1
     - _WipeSineShapeTwaddle: 0
     - _WipeSineShapeTwiddle: 0
-    - _WipeSineThreshold: 0
-    - _WipeSineTwaddle: 0
-    - _WipeSineTwiddle: 0
-    - _WipeSlope: 0
-    - _WipeYOffset: 0
+    - _WipeSineThreshold: -0.23
+    - _WipeSineTwaddle: 0.3
+    - _WipeSineTwiddle: 2.29
+    - _WipeSlope: 29
+    - _WipeX: 0
+    - _WipeYOffset: 0.3
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 1, g: 1, b: 1, a: 1}
-    - _Color2: {r: 1, g: 1, b: 1, a: 1}
-    - _DitherOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.94422317, g: 1, b: 0, a: 1}
+    - _Color1: {r: 1, g: 0.6313726, b: 0.454902, a: 1}
+    - _Color2: {r: 0.8018868, g: 0.2627847, b: 0.14676036, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RadialArcStart: {r: 0, g: 0, b: 0, a: 0}
     - _RadialArcStop: {r: 0, g: 0, b: 0, a: 0}
-    - _Resolution: {r: 128, g: 128, b: 0, a: 0}
-    - _RingScale: {r: 0, g: 0, b: 0, a: 0}
-    - _TextureResolution: {r: 128, g: 128, b: 0, a: 0}
+    - _RingScale: {r: 1, g: 1, b: 0, a: 0}
+    - _TextureResolution: {r: 1024, g: 1024, b: 0, a: 0}
   m_BuildTextureStacks: []

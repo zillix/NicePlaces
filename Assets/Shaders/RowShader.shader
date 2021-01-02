@@ -72,6 +72,10 @@ Shader "Zillix/RowShader"
 		_RingX("Ring X", Float) = 0
 		_RingY("Ring Y", Float) = 0
 
+		_StripeSineOffset2("Stripe Sine Offset 2", Float) = 0
+		_WipeSineOffset2("Wipe Sine Offset 2", Float) = 0
+		_WipeSineShapeOffset2("Wipe Sine Shape Offset 2", Float) = 0
+
 		[Toggle] _DitherEnabled("Dither Enabled", Float) = 0
 		_DitherTexture("Dither Texture", 2D) = "" {}
 		_DitherScale("Dither Scale", float) = 1
@@ -111,6 +115,7 @@ Shader "Zillix/RowShader"
 	float _WipeSineDitherEnabled;
 	sampler2D _WipeDitherOverrideTexture;
 	float _WipeDitherPow = 1;
+	float _WipeDitherScale = 1;
 	float _WipeNormalized;
 	float _WipeSlope;
 	float _WipeYOffset;
@@ -152,12 +157,17 @@ Shader "Zillix/RowShader"
 	float4 _RingScale;
 	float _RingSineDitherEnabled;
 	float _RingDitherPow = 1;
+	float _RingDitherScale = 1;
 	sampler2D _RingDitherOverrideTexture;
 	//float _RadialLength = 1
 	//float _RadialX[1];
 
 	float _RingX;
 	float _RingY;
+
+	float _WipeSineOffset2;
+	float _WipeSineShapeOffset2;
+	float _StripeSineOffset2;
 
 	float _DitherEnabled;
 	sampler2D _DitherTexture;
@@ -256,7 +266,7 @@ Shader "Zillix/RowShader"
 				ditherVal = tex2D(_StripeDitherOverrideTexture, ditherCoordinate).r;
 			}
 
-			float sinAngle = (pos.y + _StripeSineOffset) * _StripeSinePeriod;
+			float sinAngle = (pos.y + _StripeSineOffset + _StripeSineOffset2) * _StripeSinePeriod;
 			float sinInput = sinAngle;
 			if (_StripeSineTwiddle != 0 || _StripeSineTwaddle != 0) {
 				sinInput = -_StripeSineTwiddle * cos(sinAngle) + sinAngle * (_StripeSineTwiddle + _StripeSineTwaddle);
@@ -295,7 +305,14 @@ Shader "Zillix/RowShader"
 			}
 
 			if (_WipeSineDitherEnabled) {
-				ditherVal = tex2D(_WipeDitherOverrideTexture, ditherCoordinate).r;
+				float2 wipeDitherCoord = ditherCoordinate;
+				if (_WipeDitherScale != 1) {
+					float ditherX = (i.pos.x * _WipeDitherScale / _ScreenParams.x) + _DitherOffsetX; // i.uv.x;// / _ScreenParams.x;
+					float ditherY = (i.pos.y * _WipeDitherScale / _ScreenParams.x) + _DitherOffsetY; // i.uv.y;// / _ScreenParams.y;
+					wipeDitherCoord = float2(ditherX, ditherY);
+				}
+
+				ditherVal = tex2D(_WipeDitherOverrideTexture, wipeDitherCoord).r;
 			}
 
 
@@ -303,19 +320,19 @@ Shader "Zillix/RowShader"
 			float inputY = baseY + baseX * _WipeSlope + _WipeYOffset;
 
 			if (_WipeSineShapePeriod != 0) {
-				float shapeSinAngle = (baseY + _WipeSineShapeOffset) * _WipeSineShapePeriod;
+				float shapeSinAngle = (baseY + _WipeSineShapeOffset + _WipeSineShapeOffset2) * _WipeSineShapePeriod;
 				float shapeSinInput = shapeSinAngle;
 				if (_WipeSineShapeTwiddle != 0 || _WipeSineShapeTwaddle != 0) {
 					shapeSinInput = -_WipeSineShapeTwiddle * cos(shapeSinAngle) + shapeSinAngle * (_WipeSineShapeTwiddle + _WipeSineShapeTwaddle);
 				}
 				float calculatedSin = sin(shapeSinInput);
 
-				float2 slopeNormVec = _WipeSineShapeScale * normalize(float2(-_WipeSlope, baseX));
+				float2 slopeNormVec = _WipeSineShapeScale * normalize(float2(-_WipeSlope, 1));
 				slopeNormVec *= calculatedSin;
 				inputX += slopeNormVec.x;
 				inputY += slopeNormVec.y;
 			}
-			float sinAngle = (inputY + _WipeSineOffset) * _WipeSinePeriod;
+			float sinAngle = (inputY + _WipeSineOffset + _WipeSineOffset2) * _WipeSinePeriod;
 			
 			float sinInput = sinAngle;
 			if (_WipeSineTwiddle != 0 || _WipeSineTwaddle != 0) {
@@ -426,7 +443,15 @@ Shader "Zillix/RowShader"
 				pos.x = floor(pos.x / ditherRez) * ditherRez;
 				pos.y = floor(pos.y / ditherRez) * ditherRez;
 
-				ditherVal = tex2D(_RingDitherOverrideTexture, ditherCoordinate).r;
+				float2 ringDitherCoord = ditherCoordinate;
+				if (_RingDitherScale != 1) {
+					float ditherX = (i.pos.x * _RingDitherScale / _ScreenParams.x) + _DitherOffsetX; // i.uv.x;// / _ScreenParams.x;
+					float ditherY = (i.pos.y * _RingDitherScale / _ScreenParams.x) + _DitherOffsetY; // i.uv.y;// / _ScreenParams.y;
+					ringDitherCoord = float2(ditherX, ditherY);
+				}
+
+
+				ditherVal = tex2D(_RingDitherOverrideTexture, ringDitherCoord).r;
 			}
 
 

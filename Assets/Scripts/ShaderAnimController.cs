@@ -60,6 +60,7 @@ public class ShaderAnimController : MonoBehaviour
 					updateFloat(renderer, "_WipeSineDitherEnabled", state.wipeSineDitherEnabled ? 1 : 0);
 					updateTexture(renderer, "_WipeDitherOverrideTexture", state.wipeDitherTexture);
 					updateFloat(renderer, "_WipeDitherPow", state.wipeDitherPow);
+					updateFloat(renderer, "_WipeDitherScale", state.wipeDitherScale);
 					updateFloat(renderer, "_WipeNormalized", state.wipeNormalized ? 1 : 0);
 					updateFloat(renderer, "_WipeSlope", state.wipeSlope);
 					applyControlVal(renderer, "_WipeYOffset", ref state.wipeYOffset, config.wipeYOffsetControl);
@@ -100,6 +101,7 @@ public class ShaderAnimController : MonoBehaviour
 					updateFloat(renderer, "_RingSineDitherEnabled", state.ringSineDitherEnabled ? 1 : 0);
 					updateTexture(renderer, "_RingDitherOverrideTexture", state.ringDitherTexture);
 					updateFloat(renderer, "_RingDitherPow", state.ringDitherPow);
+					updateFloat(renderer, "_RingDitherScale", state.ringDitherScale);
 					updateFloat(renderer, "_RingEnabled", state.ringEnabled ? 1 : 0);
 					updateFloat(renderer, "_RingNormalized", state.ringNormalized ? 1 : 0);
 					updateFloat(renderer, "_RingEnabled", state.ringEnabled ? 1 : 0);
@@ -124,6 +126,13 @@ public class ShaderAnimController : MonoBehaviour
 					applyControlVal(renderer, "_DitherThreshold", ref state.ditherAllThreshold, config.ditherAllThreshold);
 					applyControlVal(renderer, "_DitherBandVal", ref state.ditherBandVal, config.ditherBandVal);
 					applyControlVal(renderer, "_DitherBandWidth", ref state.ditherBandWidth, config.ditherBandWidth);
+				}
+
+				if (config.updateSecondaryOffsets)
+				{
+					updateFloat(renderer, "_StripeSineOffset2", state.stripeSineOffset2);
+					updateFloat(renderer, "_WipeSineOffset2", state.wipeSineOffset2);
+					updateFloat(renderer, "_WipeSineShapeOffset2", state.wipeSineShapeOffset2);
 				}
 			}
 		}
